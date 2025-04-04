@@ -12,76 +12,6 @@ export default function SponsorsPage() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-50 bg-[#030303] md:hidden">
-          <div className="container flex h-16 items-center justify-between">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="relative h-8 w-32">
-                <Image
-                  src="/images/ecficio-logo.png"
-                  alt="Ecficio 7.0H Logo"
-                  fill
-                  className="object-contain"
-                />
-              </div>
-            </Link>
-            <Button
-              variant="ghost"
-              size="icon"
-              className="text-[#f1e8eb]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              <X className="h-6 w-6" />
-            </Button>
-          </div>
-          <nav className="container flex flex-col items-center gap-8 py-12">
-            <Link
-              href="/"
-              className="text-xl font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Home
-            </Link>
-            <Link
-              href="/#about"
-              className="text-xl font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              About
-            </Link>
-            <Link
-              href="/#highlights"
-              className="text-xl font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Highlights
-            </Link>
-            <Link
-              href="/sponsors"
-              className="text-xl font-medium text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Sponsors
-            </Link>
-            <Link
-              href="/members"
-              className="text-xl font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Members
-            </Link>
-            <Link
-              href="/events"
-              className="text-xl font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Events
-            </Link>
-          </nav>
-        </div>
-      )}
-
       <main>
         {/* Sponsors Header */}
         <section className="py-12 md:py-16 bg-gradient-to-b from-[#541a09]/20 to-[#030303]">
@@ -92,13 +22,6 @@ export default function SponsorsPage() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7 }}
             >
-              <Link
-                href="/"
-                className="flex items-center text-[#d89b1d] mb-4 hover:underline"
-              >
-                <ChevronLeft className="h-4 w-4 mr-1" />
-                Back to Home
-              </Link>
               <h1 className="text-3xl md:text-5xl font-bold tracking-tighter">
                 Our <span className="text-[#d89b1d]">Sponsors</span>
               </h1>
@@ -126,9 +49,11 @@ export default function SponsorsPage() {
             industry professionals, and creative minds.
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Button className="bg-[#d89b1d] hover:bg-[#d89b1d]/90 text-[#030303]">
-              Contact for Sponsorship
-            </Button>
+            <Link href="/sponsorship.pdf" target="_blank">
+              <Button className="bg-[#d89b1d] hover:bg-[#d89b1d]/90 text-[#030303]">
+                Contact for Sponsorship
+              </Button>
+            </Link>
           </motion.div>
         </motion.div>
         {/* Sponsors Tiers */}
