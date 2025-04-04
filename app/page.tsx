@@ -1,46 +1,49 @@
-"use client"
+"use client";
 
-import { useRef, useState, useEffect } from "react"
-import Header from "./components/Header"
-import Footer from "./components/Footer"
-import ScrollToTopButton from "./components/ScrollToTopButton" // Import the ScrollToTopButton component
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
-import { ChevronRight, Calendar, Users } from "lucide-react"
-import { Calendar as CalendarIcon } from "lucide-react"
-import Image from "next/image"
-import Link from "next/link"
-import { Clock, MapPin } from "lucide-react"
-
+import { useRef, useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { Button } from "@/app/components/ui/button";
+import { ChevronRight, Calendar, Users, Clock, MapPin } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 export default function Home() {
-  const aboutRef = useRef<HTMLElement>(null)
-  const highlightsRef = useRef<HTMLElement>(null)
-  const [showScrollToTop, setShowScrollToTop] = useState(false)
+  const aboutRef = useRef<HTMLElement>(null);
+  const highlightsRef = useRef<HTMLElement>(null);
+  const [showScrollToTop, setShowScrollToTop] = useState(false);
 
   const scrollToSection = (section: string) => {
-    const ref = section === "about" ? aboutRef : highlightsRef
+    const ref = section === "about" ? aboutRef : highlightsRef;
     if (ref.current) {
-      window.scrollTo({ top: ref.current.offsetTop - 80, behavior: "smooth" })
+      window.scrollTo({ top: ref.current.offsetTop - 80, behavior: "smooth" });
     }
-  }
+  };
 
   const handleScroll = () => {
-    setShowScrollToTop(window.scrollY > 300)
-  }
+    setShowScrollToTop(window.scrollY > 300);
+  };
 
   const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" })
-  }
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll)
-    return () => window.removeEventListener("scroll", handleScroll)
-  }, [])
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    if (window.location.hash) {
+      const sectionId = window.location.hash.substring(1);
+      const section = document.getElementById(sectionId);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
+    }
+  }, []);
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
-      <Header scrollToSection={scrollToSection} />
       <main>
         {/* Video Section */}
         <section className="relative overflow-hidden">
@@ -61,59 +64,14 @@ export default function Home() {
 
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 md:py-32">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#541a09]/20 to-[#030303] z-0"></div>
-
-          {/* Animated background elements */}
-          <motion.div
-            className="absolute top-20 left-10 w-20 h-20 rounded-full bg-[#d89b1d]/10 blur-3xl"
-            animate={{
-              scale: [1, 1.2, 1],
-              opacity: [0.5, 0.8, 0.5],
-            }}
-            transition={{
-              duration: 8,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-            }}
-          />
-          <motion.div
-            className="absolute bottom-20 right-10 w-40 h-40 rounded-full bg-[#541a09]/10 blur-3xl"
-            animate={{
-              scale: [1, 1.3, 1],
-              opacity: [0.5, 0.7, 0.5],
-            }}
-            transition={{
-              duration: 10,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-              delay: 1,
-            }}
-          />
-          <motion.div
-            className="absolute top-1/2 left-1/3 w-32 h-32 rounded-full bg-[#655b5e]/5 blur-3xl"
-            animate={{
-              scale: [1, 1.5, 1],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 12,
-              repeat: Number.POSITIVE_INFINITY,
-              ease: "easeInOut",
-              delay: 2,
-            }}
-          />
-
           <div className="container relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-10">
-
               <motion.div
                 className="flex flex-col items-center space-y-6"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-
-
                 <div className="flex flex-col items-center space-y-2">
                   <motion.h1
                     className="text-4xl md:text-6xl font-bold tracking-tighter flex items-center justify-center"
@@ -133,7 +91,9 @@ export default function Home() {
                   </motion.h1>
                   <div className="calendar-widget bg-[#030303] backdrop-blur-md border border-[#655b5e]/50 rounded-lg p-8 shadow-lg shadow-[#d89b1d]/20 max-w-md mx-auto">
                     <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-[#d89b1d] font-bold text-xl tracking-wide">APRIL 2025</h3>
+                      <h3 className="text-[#d89b1d] font-bold text-xl tracking-wide">
+                        APRIL 2025
+                      </h3>
                       <div className="p-3 rounded-md bg-[#655b5e]/20">
                         <Calendar className="w-6 h-6 text-[#d89b1d]" />
                       </div>
@@ -141,12 +101,18 @@ export default function Home() {
 
                     <div className="flex justify-center space-x-12 mb-8">
                       <div className="text-center">
-                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">10</div>
+                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">
+                          10
+                        </div>
                         <div className="text-[#f1e8eb]/80 text-base">THU</div>
                       </div>
-                      <div className="text-[#655b5e] text-3xl font-bold self-center">&</div>
+                      <div className="text-[#655b5e] text-3xl font-bold self-center">
+                        &
+                      </div>
                       <div className="text-center">
-                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">11</div>
+                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">
+                          11
+                        </div>
                         <div className="text-[#f1e8eb]/80 text-base">FRI</div>
                       </div>
                     </div>
@@ -154,11 +120,15 @@ export default function Home() {
                     <div className="mt-8 pt-6 border-t border-[#655b5e]/30 flex justify-between items-center">
                       <div className="flex items-center">
                         <Clock className="h-5 w-5 text-[#d89b1d] mr-2" />
-                        <span className="text-base text-[#f1e8eb]/80">2 Days</span>
+                        <span className="text-base text-[#f1e8eb]/80">
+                          2 Days
+                        </span>
                       </div>
                       <div className="flex items-center">
                         <MapPin className="h-5 w-5 text-[#d89b1d] mr-2" />
-                        <span className="text-base text-[#f1e8eb]/80">Bangalore</span>
+                        <span className="text-base text-[#f1e8eb]/80">
+                          Bangalore
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -168,8 +138,8 @@ export default function Home() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
                   >
-                    The ultimate tech and cultural festival that brings innovation, creativity, and entrepreneurship
-                    together.
+                    The ultimate tech and cultural festival that brings
+                    innovation, creativity, and entrepreneurship together.
                   </motion.p>
                 </div>
 
@@ -221,14 +191,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.1 }}
-                whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)" }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)",
+                }}
               >
                 <div className="p-3 rounded-full bg-[#d89b1d]/10">
                   <Calendar className="h-8 w-8 text-[#d89b1d]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#f1e8eb]">7th Edition</h3>
+                <h3 className="text-xl font-bold text-[#f1e8eb]">
+                  7th Edition
+                </h3>
                 <p className="text-center text-[#655b5e]">
-                  Join us for the 7th edition of our flagship event, now bigger and better than ever before.
+                  Join us for the 7th edition of our flagship event, now bigger
+                  and better than ever before.
                 </p>
               </motion.div>
 
@@ -238,14 +214,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)" }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)",
+                }}
               >
                 <div className="p-3 rounded-full bg-[#d89b1d]/10">
                   <MapPin className="h-8 w-8 text-[#d89b1d]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#f1e8eb]">Premier Venue</h3>
+                <h3 className="text-xl font-bold text-[#f1e8eb]">
+                  Premier Venue
+                </h3>
                 <p className="text-center text-[#655b5e]">
-                  Hosted at the prestigious University Convention Center with state-of-the-art facilities.
+                  Hosted at the prestigious University Convention Center with
+                  state-of-the-art facilities.
                 </p>
               </motion.div>
 
@@ -255,14 +237,20 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.7, delay: 0.3 }}
-                whileHover={{ y: -10, boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)" }}
+                whileHover={{
+                  y: -10,
+                  boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)",
+                }}
               >
                 <div className="p-3 rounded-full bg-[#d89b1d]/10">
                   <Users className="h-8 w-8 text-[#d89b1d]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#f1e8eb]">5000+ Attendees</h3>
+                <h3 className="text-xl font-bold text-[#f1e8eb]">
+                  5000+ Attendees
+                </h3>
                 <p className="text-center text-[#655b5e]">
-                  Join over 5000 tech enthusiasts, industry professionals, and creative minds.
+                  Join over 5000 tech enthusiasts, industry professionals, and
+                  creative minds.
                 </p>
               </motion.div>
             </div>
@@ -275,27 +263,43 @@ export default function Home() {
               transition={{ duration: 0.7, delay: 0.4 }}
             >
               <p className="max-w-3xl mx-auto text-[#f1e8eb]/80">
-                Ecficio 7.0<sup>H</sup> is the premier tech and cultural festival that brings together innovation,
-                creativity, and entrepreneurship. With a rich history of six successful editions, we&apos;re back with
-                our most ambitious event yet. Featuring workshops, competitions, talks by industry leaders, cultural
-                performances, and much more, Ecficio 7.0<sup>H</sup> promises an unforgettable experience for all
-                participants.
+                Ecficio 7.0<sup>H</sup> is the premier tech and cultural
+                festival that brings together innovation, creativity, and
+                entrepreneurship. With a rich history of six successful
+                editions, we&apos;re back with our most ambitious event yet.
+                Featuring workshops, competitions, talks by industry leaders,
+                cultural performances, and much more, Ecficio 7.0<sup>H</sup>{" "}
+                promises an unforgettable experience for all participants.
               </p>
 
               <div className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
-                <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.1 }}>
+                <motion.div
+                  className="flex flex-col items-center"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <span className="text-3xl font-bold text-[#d89b1d]">20+</span>
                   <span className="text-[#655b5e]">Events</span>
                 </motion.div>
-                <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.1 }}>
+                <motion.div
+                  className="flex flex-col items-center"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <span className="text-3xl font-bold text-[#d89b1d]">50+</span>
                   <span className="text-[#655b5e]">Speakers</span>
                 </motion.div>
-                <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.1 }}>
-                  <span className="text-3xl font-bold text-[#d89b1d]">₹5L+</span>
+                <motion.div
+                  className="flex flex-col items-center"
+                  whileHover={{ scale: 1.1 }}
+                >
+                  <span className="text-3xl font-bold text-[#d89b1d]">
+                    ₹5L+
+                  </span>
                   <span className="text-[#655b5e]">Prizes</span>
                 </motion.div>
-                <motion.div className="flex flex-col items-center" whileHover={{ scale: 1.1 }}>
+                <motion.div
+                  className="flex flex-col items-center"
+                  whileHover={{ scale: 1.1 }}
+                >
                   <span className="text-3xl font-bold text-[#d89b1d]">30+</span>
                   <span className="text-[#655b5e]">Sponsors</span>
                 </motion.div>
@@ -305,7 +309,11 @@ export default function Home() {
         </section>
 
         {/* Highlights Section */}
-        <section id="highlights" ref={highlightsRef} className="py-20 bg-[#030303]">
+        <section
+          id="highlights"
+          ref={highlightsRef}
+          className="py-20 bg-[#030303]"
+        >
           <div className="container px-4 md:px-6">
             <motion.div
               className="flex flex-col items-center space-y-4 text-center mb-10"
@@ -319,7 +327,8 @@ export default function Home() {
               </h2>
               <div className="w-20 h-1 bg-[#d89b1d]"></div>
               <p className="text-[#655b5e] max-w-2xl">
-                Relive the memories from our previous editions and get a glimpse of what to expect this year.
+                Relive the memories from our previous editions and get a glimpse
+                of what to expect this year.
               </p>
             </motion.div>
 
@@ -342,37 +351,16 @@ export default function Home() {
                     className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#030303] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-[#f1e8eb] text-sm font-medium">Ecficio 6.0 - 2024</p>
+                    <p className="text-[#f1e8eb] text-sm font-medium">
+                      Ecficio 6.0 - 2024
+                    </p>
                   </div>
                 </motion.div>
               ))}
             </div>
-
-            <motion.div
-              className="mt-10 text-center"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.7, delay: 0.4 }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              <Link href="/highlights">
-                <Button
-                  variant="outline"
-                  className="border-[#d89b1d] text-[#d89b1d] hover:bg-[#d89b1d] hover:text-[#030303] hover:shadow-lg hover:shadow-[#d89b1d]/50 transition-all duration-300 group"
-                >
-                  View More Highlights
-                  <ChevronRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
-                </Button>
-              </Link>
-            </motion.div>
           </div>
         </section>
       </main>
-      <Footer />
-      <ScrollToTopButton show={showScrollToTop} onClick={scrollToTop} /> {/* Embed ScrollToTopButton */}
     </div>
-  )
+  );
 }
-

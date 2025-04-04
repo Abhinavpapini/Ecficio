@@ -1,10 +1,10 @@
-import Link from "next/link"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
-import { ChevronLeft } from "lucide-react"
+import Link from "next/link";
+import Image from "next/image";
+import { Button } from "@/app/components/ui/button";
+import { Input } from "@/app/components/ui/input";
+import { Label } from "@/app/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { ChevronLeft } from "lucide-react";
 
 export default function BookingPage() {
   return (
@@ -18,22 +18,40 @@ export default function BookingPage() {
             </span>
           </div>
           <nav className="hidden md:flex items-center gap-6">
-            <Link href="/" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               Home
             </Link>
-            <Link href="/#about" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/#about"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               About
             </Link>
-            <Link href="/#highlights" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/#highlights"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               Highlights
             </Link>
-            <Link href="/#sponsors" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/#sponsors"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               Sponsors
             </Link>
-            <Link href="/#members" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/#members"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               Members
             </Link>
-            <Link href="/events" className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]">
+            <Link
+              href="/events"
+              className="text-sm font-medium text-[#f1e8eb] hover:text-[#d89b1d]"
+            >
               Events
             </Link>
           </nav>
@@ -66,7 +84,10 @@ export default function BookingPage() {
             {/* Left Column - Booking Form */}
             <div className="flex-1">
               <div className="mb-8">
-                <Link href="/events" className="flex items-center text-[#d89b1d] mb-4 hover:underline">
+                <Link
+                  href="/events"
+                  className="flex items-center text-[#d89b1d] mb-4 hover:underline"
+                >
                   <ChevronLeft className="h-4 w-4 mr-1" />
                   Back to Events
                 </Link>
@@ -129,9 +150,16 @@ export default function BookingPage() {
                 {/* Payment Method */}
                 <div className="space-y-4">
                   <h2 className="text-xl font-semibold">Payment Method</h2>
-                  <RadioGroup defaultValue="upi" className="grid gap-4 md:grid-cols-3">
+                  <RadioGroup
+                    defaultValue="upi"
+                    className="grid gap-4 md:grid-cols-3"
+                  >
                     <div>
-                      <RadioGroupItem value="upi" id="upi" className="peer sr-only" />
+                      <RadioGroupItem
+                        value="upi"
+                        id="upi"
+                        className="peer sr-only"
+                      />
                       <Label
                         htmlFor="upi"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-[#655b5e] bg-[#030303] p-4 hover:bg-[#655b5e]/5 hover:border-[#d89b1d] peer-checked:border-[#d89b1d] peer-checked:bg-[#d89b1d]/5"
@@ -153,12 +181,18 @@ export default function BookingPage() {
                         </svg>
                         <div className="text-center">
                           <div className="text-sm font-semibold">UPI</div>
-                          <div className="text-xs text-[#655b5e]">Pay using UPI apps</div>
+                          <div className="text-xs text-[#655b5e]">
+                            Pay using UPI apps
+                          </div>
                         </div>
                       </Label>
                     </div>
                     <div>
-                      <RadioGroupItem value="card" id="card" className="peer sr-only" />
+                      <RadioGroupItem
+                        value="card"
+                        id="card"
+                        className="peer sr-only"
+                      />
                       <Label
                         htmlFor="card"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-[#655b5e] bg-[#030303] p-4 hover:bg-[#655b5e]/5 hover:border-[#d89b1d] peer-checked:border-[#d89b1d] peer-checked:bg-[#d89b1d]/5"
@@ -179,13 +213,21 @@ export default function BookingPage() {
                           <line x1="2" x2="22" y1="10" y2="10" />
                         </svg>
                         <div className="text-center">
-                          <div className="text-sm font-semibold">Credit/Debit Card</div>
-                          <div className="text-xs text-[#655b5e]">Pay using card</div>
+                          <div className="text-sm font-semibold">
+                            Credit/Debit Card
+                          </div>
+                          <div className="text-xs text-[#655b5e]">
+                            Pay using card
+                          </div>
                         </div>
                       </Label>
                     </div>
                     <div>
-                      <RadioGroupItem value="netbanking" id="netbanking" className="peer sr-only" />
+                      <RadioGroupItem
+                        value="netbanking"
+                        id="netbanking"
+                        className="peer sr-only"
+                      />
                       <Label
                         htmlFor="netbanking"
                         className="flex flex-col items-center justify-between rounded-md border-2 border-[#655b5e] bg-[#030303] p-4 hover:bg-[#655b5e]/5 hover:border-[#d89b1d] peer-checked:border-[#d89b1d] peer-checked:bg-[#d89b1d]/5"
@@ -206,8 +248,12 @@ export default function BookingPage() {
                           <polyline points="9 22 9 12 15 12 15 22" />
                         </svg>
                         <div className="text-center">
-                          <div className="text-sm font-semibold">Net Banking</div>
-                          <div className="text-xs text-[#655b5e]">Pay using net banking</div>
+                          <div className="text-sm font-semibold">
+                            Net Banking
+                          </div>
+                          <div className="text-xs text-[#655b5e]">
+                            Pay using net banking
+                          </div>
                         </div>
                       </Label>
                     </div>
@@ -263,8 +309,12 @@ export default function BookingPage() {
                     <div className="space-y-3">
                       <div className="flex justify-between">
                         <div>
-                          <p className="text-sm font-medium">48-Hour Hackathon</p>
-                          <p className="text-xs text-[#655b5e]">April 10, 2025</p>
+                          <p className="text-sm font-medium">
+                            48-Hour Hackathon
+                          </p>
+                          <p className="text-xs text-[#655b5e]">
+                            April 10, 2025
+                          </p>
                         </div>
                         <p className="text-sm">₹999</p>
                       </div>
@@ -272,7 +322,9 @@ export default function BookingPage() {
                       <div className="flex justify-between">
                         <div>
                           <p className="text-sm font-medium">AI Summit</p>
-                          <p className="text-xs text-[#655b5e]">April 11, 2025</p>
+                          <p className="text-xs text-[#655b5e]">
+                            April 11, 2025
+                          </p>
                         </div>
                         <p className="text-sm">₹499</p>
                       </div>
@@ -336,7 +388,8 @@ export default function BookingPage() {
                 </span>
               </div>
               <p className="text-[#655b5e] mb-4 max-w-xs">
-                The ultimate tech and cultural festival bringing innovation, creativity, and entertainment together.
+                The ultimate tech and cultural festival bringing innovation,
+                creativity, and entertainment together.
               </p>
               <div className="flex space-x-4">
                 <Link href="#" className="text-[#655b5e] hover:text-[#d89b1d]">
@@ -384,7 +437,14 @@ export default function BookingPage() {
                     strokeLinejoin="round"
                     className="h-5 w-5"
                   >
-                    <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                    <rect
+                      width="20"
+                      height="20"
+                      x="2"
+                      y="2"
+                      rx="5"
+                      ry="5"
+                    ></rect>
                     <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
                     <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"></line>
                   </svg>
@@ -411,30 +471,47 @@ export default function BookingPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-[#f1e8eb] mb-4">Quick Links</h3>
+              <h3 className="text-lg font-bold text-[#f1e8eb] mb-4">
+                Quick Links
+              </h3>
               <ul className="space-y-2">
                 <li>
-                  <Link href="/" className="text-[#655b5e] hover:text-[#d89b1d]">
+                  <Link
+                    href="/"
+                    className="text-[#655b5e] hover:text-[#d89b1d]"
+                  >
                     Home
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#about" className="text-[#655b5e] hover:text-[#d89b1d]">
+                  <Link
+                    href="/#about"
+                    className="text-[#655b5e] hover:text-[#d89b1d]"
+                  >
                     About
                   </Link>
                 </li>
                 <li>
-                  <Link href="/events" className="text-[#655b5e] hover:text-[#d89b1d]">
+                  <Link
+                    href="/events"
+                    className="text-[#655b5e] hover:text-[#d89b1d]"
+                  >
                     Events
                   </Link>
                 </li>
                 <li>
-                  <Link href="/#sponsors" className="text-[#655b5e] hover:text-[#d89b1d]">
+                  <Link
+                    href="/#sponsors"
+                    className="text-[#655b5e] hover:text-[#d89b1d]"
+                  >
                     Sponsors
                   </Link>
                 </li>
                 <li>
-                  <Link href="/booking" className="text-[#655b5e] hover:text-[#d89b1d]">
+                  <Link
+                    href="/booking"
+                    className="text-[#655b5e] hover:text-[#d89b1d]"
+                  >
                     Register
                   </Link>
                 </li>
@@ -442,7 +519,9 @@ export default function BookingPage() {
             </div>
 
             <div>
-              <h3 className="text-lg font-bold text-[#f1e8eb] mb-4">Contact Us</h3>
+              <h3 className="text-lg font-bold text-[#f1e8eb] mb-4">
+                Contact Us
+              </h3>
               <ul className="space-y-2">
                 <li className="flex items-start">
                   <svg
@@ -495,7 +574,10 @@ export default function BookingPage() {
                     <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
                     <circle cx="12" cy="10" r="3"></circle>
                   </svg>
-                  <span className="text-[#655b5e]">University Convention Center, Tech Campus, Bangalore - 560001</span>
+                  <span className="text-[#655b5e]">
+                    University Convention Center, Tech Campus, Bangalore -
+                    560001
+                  </span>
                 </li>
               </ul>
             </div>
@@ -503,12 +585,12 @@ export default function BookingPage() {
 
           <div className="mt-8 pt-8 border-t border-[#655b5e]/20 text-center">
             <p className="text-[#655b5e]">
-              © {new Date().getFullYear()} Ecficio 7.0<sup>H</sup>. All rights reserved.
+              © {new Date().getFullYear()} Ecficio 7.0<sup>H</sup>. All rights
+              reserved.
             </p>
           </div>
         </div>
       </footer>
     </div>
-  )
+  );
 }
-

@@ -1,10 +1,14 @@
+// layout.tsx
+
 import type { Metadata } from 'next'
 import './globals.css'
 import ScrollToTopButton from "./components/ScrollToTopButton"
+import Header from './components/Header'
+import Footer from './components/Footer'
 
 export const metadata: Metadata = {
   title: 'Ecficio 7.0 ᴴ',
-  description: 'Entruepreneurship Event',
+  description: 'Entrepreneurship Event',
 }
 
 export default function RootLayout({
@@ -15,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
+      <Header />
         {children}
         <ScrollToTopButton />
+      <Footer />
       </body>
     </html>
   )

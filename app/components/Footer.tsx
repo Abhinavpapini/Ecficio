@@ -43,7 +43,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="mt-8 pt-8 border-t border-[#655b5e]/20 text-center">
-          <p className="text-[#655b5e]">© {new Date().getFullYear()} Ecficio 7.0H. All rights reserved.</p>
+          <p className="text-[#655b5e]">© {new Date().getFullYear()} Ecficio 7.0 ᴴ. All rights reserved.</p>
         </div>
       </div>
     </footer>
