@@ -60,7 +60,7 @@ export default function EventsPage() {
                   whileHover={{ scale: 1.05 }}
                 >
                   <Users className="h-4 w-4 mr-2" />
-                  5000+ Attendees
+                  1000+ Attendees
                 </motion.div>
               </div>
             </motion.div>

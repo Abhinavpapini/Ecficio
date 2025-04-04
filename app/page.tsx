@@ -81,7 +81,7 @@ export default function Home() {
                   >
                     <div className="relative w-40 h-20 md:w-56 md:h-56 aspect-square">
                       <Image
-                        src="/images/ecfic-logo.png"
+                        src="/images/ecficio-logo.png"
                         alt="Ecficio 7.0H Logo"
                         layout="fill"
                         className="object-contain"
@@ -127,7 +127,7 @@ export default function Home() {
                       <div className="flex items-center">
                         <MapPin className="h-5 w-5 text-[#d89b1d] mr-2" />
                         <span className="text-base text-[#f1e8eb]/80">
-                          Bangalore
+                          VNR VJIET
                         </span>
                       </div>
                     </div>
@@ -223,11 +223,10 @@ export default function Home() {
                   <MapPin className="h-8 w-8 text-[#d89b1d]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#f1e8eb]">
-                  Premier Venue
+                  Venue
                 </h3>
                 <p className="text-center text-[#655b5e]">
-                  Hosted at the prestigious University Convention Center with
-                  state-of-the-art facilities.
+                  Hosted at Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering and Technology.
                 </p>
               </motion.div>
 
@@ -246,10 +245,10 @@ export default function Home() {
                   <Users className="h-8 w-8 text-[#d89b1d]" />
                 </div>
                 <h3 className="text-xl font-bold text-[#f1e8eb]">
-                  5000+ Attendees
+                  1000+ Attendees
                 </h3>
                 <p className="text-center text-[#655b5e]">
-                  Join over 5000 tech enthusiasts, industry professionals, and
+                  Join over 1000 tech enthusiasts, industry professionals, and
                   creative minds.
                 </p>
               </motion.div>
@@ -277,14 +276,14 @@ export default function Home() {
                   className="flex flex-col items-center"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <span className="text-3xl font-bold text-[#d89b1d]">20+</span>
+                  <span className="text-3xl font-bold text-[#d89b1d]">10+</span>
                   <span className="text-[#655b5e]">Events</span>
                 </motion.div>
                 <motion.div
                   className="flex flex-col items-center"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <span className="text-3xl font-bold text-[#d89b1d]">50+</span>
+                  <span className="text-3xl font-bold text-[#d89b1d]">30+</span>
                   <span className="text-[#655b5e]">Speakers</span>
                 </motion.div>
                 <motion.div
@@ -292,7 +291,7 @@ export default function Home() {
                   whileHover={{ scale: 1.1 }}
                 >
                   <span className="text-3xl font-bold text-[#d89b1d]">
-                    ₹5L+
+                    ₹2L+
                   </span>
                   <span className="text-[#655b5e]">Prizes</span>
                 </motion.div>
@@ -300,7 +299,7 @@ export default function Home() {
                   className="flex flex-col items-center"
                   whileHover={{ scale: 1.1 }}
                 >
-                  <span className="text-3xl font-bold text-[#d89b1d]">30+</span>
+                  <span className="text-3xl font-bold text-[#d89b1d]">5+</span>
                   <span className="text-[#655b5e]">Sponsors</span>
                 </motion.div>
               </div>
