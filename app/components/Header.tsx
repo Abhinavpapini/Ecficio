@@ -27,7 +27,7 @@ export default function Header({
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Track active section for highlighting in menu
+  // Track active section for highlighting in menu - but only on homepage
   useEffect(() => {
     const checkActiveSection = () => {
       const sections = ["about", "highlights"];
@@ -43,7 +43,11 @@ export default function Header({
 
     if (pathname === "/") {
       window.addEventListener("scroll", checkActiveSection);
+      checkActiveSection(); // Initial check
       return () => window.removeEventListener("scroll", checkActiveSection);
+    } else {
+      // Reset active section when not on homepage
+      setActiveSection("");
     }
   }, [pathname]);
 
@@ -76,6 +80,27 @@ export default function Header({
     setIsMenuOpen(false);
   };
 
+  // Function to determine if a link is active
+  const isLinkActive = (link: { href: string; label: string }) => {
+    // For home page
+    if (link.href === "/" && pathname === "/") {
+      return !activeSection; // Home is active only when no section is active
+    }
+    
+    // For sections on home page
+    if (link.href.startsWith("/#") && pathname === "/") {
+      const section = link.href.split("#")[1];
+      return section === activeSection;
+    }
+    
+    // For other pages
+    if (!link.href.includes("#")) {
+      return pathname === link.href;
+    }
+    
+    return false;
+  };
+
   return (
     <>
       {/* Header with increased contrast and better visibility */}
@@ -103,18 +128,25 @@ export default function Header({
 
           {/* Desktop Navigation with improved contrast */}
           <nav className="hidden md:flex items-center gap-3 lg:gap-4 xl:gap-5">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-xs lg:text-sm xl:text-base font-medium text-white hover:text-[#d89b1d] transition-colors"
-                onClick={(e) => handleNavClick(link.href, e)}
-              >
-                <span className="px-3 py-2 lg:px-4 lg:py-2 xl:px-5 xl:py-2.5 bg-[#655b5e]/30 rounded-full hover:bg-[#655b5e]/40 transition-colors">
-                  {link.label}
-                </span>
-              </Link>
-            ))}
+            {navLinks.map((link) => {
+              const active = isLinkActive(link);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`text-xs lg:text-sm xl:text-base font-medium ${
+                    active ? "text-[#d89b1d]" : "text-white hover:text-[#d89b1d]"
+                  } transition-colors`}
+                  onClick={(e) => handleNavClick(link.href, e)}
+                >
+                  <span className={`px-3 py-2 lg:px-4 lg:py-2 xl:px-5 xl:py-2.5 ${
+                    active ? "bg-[#d89b1d]/30" : "bg-[#655b5e]/30 hover:bg-[#655b5e]/40"
+                  } rounded-full transition-colors`}>
+                    {link.label}
+                  </span>
+                </Link>
+              );
+            })}
             <Link
               href="https://www.mihvnrvjiet.org/event-details-registration/ecficio-7-0"
               target="_blank"
@@ -135,7 +167,6 @@ export default function Header({
             >
               Register
             </Link>
-            {/*
             <Button
               variant="ghost"
               size="sm"
@@ -145,88 +176,89 @@ export default function Header({
             >
               <Menu className="h-6 w-6" />
             </Button>
-            */}
           </div>
-        </div>
-
-        {/* Mobile Menu Overlay with improved contrast */}
-        <div
-          className={`fixed inset-0 z-50 bg-gradient-to-b from-[#030303] to-[#1a1618] md:hidden flex flex-col transform transition-all duration-400 ease-in-out ${
-            isMenuOpen
-              ? "translate-x-0 opacity-100"
-              : "translate-x-full opacity-0"
-          } overflow-y-auto`}
-        >
-          {/* Mobile Menu Header */}
-          <div className="flex h-16 sm:h-18 items-center justify-between px-4 sm:px-6 border-b border-[#655b5e]/40 bg-[#030303]">
-            <Link href="/" className="flex items-center group">
-              <div className="relative h-10 w-32 xs:h-12 xs:w-40 sm:h-14 sm:w-48 transition-all duration-300 group-hover:scale-105">
-                <Image
-                  src="/images/ecficio-logo.png"
-                  alt="Ecficio 7.0H Logo"
-                  fill
-                  className="object-contain brightness-110 contrast-110"
-                  priority
-                  sizes="(max-width: 480px) 8rem, (max-width: 640px) 10rem, 12rem"
-                />
-              </div>
-            </Link>
-            <Button
-              variant="ghost"
-              size="sm"
-              className="text-white hover:bg-[#655b5e]/30 p-2 rounded-full transition-transform hover:rotate-90 duration-300"
-              onClick={() => setIsMenuOpen(false)}
-              aria-label="Close Menu"
-            >
-              <X className="h-6 w-6" />
-            </Button>
-          </div>
-
-          {/* Mobile Menu Links with improved contrast */}
-          <nav className="flex flex-col items-center justify-start gap-4 sm:gap-5 py-6 px-5 flex-grow overflow-y-auto">
-            {/* {navLinks.map((link, index) => {
-              const isActive =
-                link.href === pathname ||
-                (link.href.includes("#") && link.href.includes(activeSection));
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={`w-full max-w-xs text-center text-base sm:text-lg font-medium transition-all duration-300 ${
-                    isActive ? "text-[#d89b1d]" : "text-white"
-                  } hover:text-[#d89b1d] transform hover:translate-y-[-2px]`}
-                  onClick={(e) => handleNavClick(link.href, e)}
-                  style={{
-                    animationDelay: `${index * 0.1}s`,
-                  }}
-                >
-                  <span
-                    className={`block px-4 py-3 sm:px-5 sm:py-4 rounded-xl transition-all duration-300 ${
-                      isActive
-                        ? "bg-[#d89b1d]/30 border-l-4 border-[#d89b1d]"
-                        : "bg-[#655b5e]/30 hover:bg-[#655b5e]/40"
-                    }`}
-                  >
-                    {link.label}
-                  </span>
-                </Link>
-              );
-            })} */}
-
-            {/* Register button in mobile menu with enhanced visibility */}
-            <Link
-              href="https://www.mihvnrvjiet.org/event-details-registration/ecficio-7-0"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full max-w-xs text-center text-base sm:text-lg font-bold text-[#030303] bg-gradient-to-r from-[#d89b1d] to-[#e6a935] px-4 py-3 sm:px-5 sm:py-4 rounded-xl hover:bg-[#e6a935] transition-all shadow-lg hover:shadow-xl shadow-[#d89b1d]/40 hover:shadow-[#d89b1d]/60 mt-4 transform hover:translate-y-[-2px]"
-              style={{ animationDelay: `${navLinks.length * 0.1}s` }}
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Register Now
-            </Link>
-          </nav>
         </div>
       </header>
+
+      {/* Mobile Menu Overlay - Improved version */}
+      {isMenuOpen && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50 md:hidden" onClick={() => setIsMenuOpen(false)}>
+          <div 
+            className="fixed right-0 top-0 h-full w-4/5 max-w-sm bg-gradient-to-b from-[#030303] to-[#1a1618] shadow-xl transform transition-transform duration-300 ease-in-out overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Mobile Menu Header */}
+            <div className="sticky top-0 flex h-16 sm:h-18 items-center justify-between px-4 sm:px-6 border-b border-[#655b5e]/40 bg-[#030303]/95 backdrop-blur">
+              <Link href="/" className="flex items-center group" onClick={() => setIsMenuOpen(false)}>
+                <div className="relative h-10 w-32 sm:h-12 sm:w-40 transition-all duration-300">
+                  <Image
+                    src="/images/ecficio-logo.png"
+                    alt="Ecficio 7.0H Logo"
+                    fill
+                    className="object-contain brightness-110 contrast-110"
+                    priority
+                    sizes="(max-width: 480px) 8rem, (max-width: 640px) 10rem, 12rem"
+                  />
+                </div>
+              </Link>
+              <Button
+                variant="ghost"
+                size="sm"
+                className="text-white hover:bg-[#655b5e]/30 p-2 rounded-full"
+                onClick={() => setIsMenuOpen(false)}
+                aria-label="Close Menu"
+              >
+                <X className="h-6 w-6" />
+              </Button>
+            </div>
+
+            {/* Mobile Menu Links */}
+            <nav className="flex flex-col px-4 sm:px-6 py-6 space-y-3">
+              {navLinks.map((link, index) => {
+                const active = isLinkActive(link);
+                
+                return (
+                  <Link
+                    key={link.href}
+                    href={link.href}
+                    className={`block px-4 py-3 rounded-lg text-base font-medium transition-all duration-200 ${
+                      active 
+                        ? "bg-[#d89b1d]/20 text-[#d89b1d] border-l-4 border-[#d89b1d]" 
+                        : "bg-[#655b5e]/20 text-white hover:bg-[#655b5e]/30 hover:text-[#d89b1d]"
+                    }`}
+                    onClick={(e) => handleNavClick(link.href, e)}
+                    style={{
+                      animationDelay: `${index * 0.05}s`,
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
+              
+              {/* Register button in mobile menu */}
+              <div className="pt-4">
+                <Link
+                  href="https://www.mihvnrvjiet.org/event-details-registration/ecficio-7-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block w-full text-center font-bold text-[#030303] bg-[#d89b1d] px-4 py-3.5 rounded-lg hover:bg-[#e6a935] transition-all shadow-md hover:shadow-lg"
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Register Now
+                </Link>
+              </div>
+            </nav>
+
+            {/* Social Media Links or Additional Info */}
+            <div className="mt-auto px-6 py-8 border-t border-[#655b5e]/30">
+              <p className="text-sm text-gray-400 text-center">
+                Ecficio 7.0H - The Human Side of Technology
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </>
   );
 }

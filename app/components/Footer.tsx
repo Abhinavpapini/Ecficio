@@ -28,7 +28,7 @@ export default function Footer() {
             {/* Social Media Links */}
             <div className="flex space-x-4">
               <Link
-                href="#"
+                href="https://www.linkedin.com/in/ecficiovnrvjiet"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#655b5e] hover:text-[#d89b1d] transition-colors duration-200"
@@ -36,7 +36,7 @@ export default function Footer() {
                 <FontAwesomeIcon icon={faLinkedin} size="lg" />
               </Link>
               <Link
-                href="#"
+                href="https://www.instagram.com/ecficio.vnrvjiet/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#655b5e] hover:text-[#d89b1d] transition-colors duration-200"
@@ -73,7 +73,9 @@ export default function Footer() {
               </li>
               <li>
                 <Link
-                  href="/booking"
+                  href="https://www.mihvnrvjiet.org/event-details-registration/ecficio-7-0"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-[#655b5e] hover:text-[#d89b1d]"
                 >
                   Register

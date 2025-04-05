@@ -45,11 +45,11 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
       <main>
-        {/* Video Section */}
+        {/* Video Section - Reduced height */}
         <section className="relative overflow-hidden">
           <div className="video-container">
             <video
-              className="w-full h-[50vh] md:h-[70vh] object-cover"
+              className="w-full h-[30vh] md:h-[40vh] object-cover"
               autoPlay
               loop
               muted
@@ -62,24 +62,26 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Hero Section */}
-        <section className="relative overflow-hidden py-20 md:py-32">
-          <div className="container relative z-10 px-4 md:px-6">
-            <div className="flex flex-col items-center text-center space-y-10">
+        {/* Hero Section - Minimal padding and maximized logo size */}
+        <section className="relative overflow-hidden py-2">
+          <div className="container relative z-10 px-0 md:px-2">
+            <div className="flex flex-col items-center text-center space-y-2">
               <motion.div
-                className="flex flex-col items-center space-y-6"
+                className="flex flex-col items-center"
                 initial={{ opacity: 0, y: 30 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.3 }}
               >
-                <div className="flex flex-col items-center space-y-2">
+                <div className="flex flex-col items-center">
                   <motion.h1
                     className="text-4xl md:text-6xl font-bold tracking-tighter flex items-center justify-center"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.5 }}
                   >
-                    <div className="relative w-40 h-20 md:w-56 md:h-56 aspect-square">
+                    {/* Maximized logo size with minimal padding */}
+                    {/* Responsive logo sizing */}
+                    <div className="relative w-[300px] h-[120px] sm:w-[400px] sm:h-[150px] md:w-[600px] md:h-[200px] lg:w-[800px] lg:h-[250px] aspect-auto">
                       <Image
                         src="/images/ecficio-logo.png"
                         alt="Ecficio 7.0H Logo"
@@ -89,51 +91,8 @@ export default function Home() {
                       />
                     </div>
                   </motion.h1>
-                  <div className="calendar-widget bg-[#030303] backdrop-blur-md border border-[#655b5e]/50 rounded-lg p-8 shadow-lg shadow-[#d89b1d]/20 max-w-md mx-auto">
-                    <div className="flex items-center justify-between mb-6">
-                      <h3 className="text-[#d89b1d] font-bold text-xl tracking-wide">
-                        APRIL 2025
-                      </h3>
-                      <div className="p-3 rounded-md bg-[#655b5e]/20">
-                        <Calendar className="w-6 h-6 text-[#d89b1d]" />
-                      </div>
-                    </div>
-
-                    <div className="flex justify-center space-x-12 mb-8">
-                      <div className="text-center">
-                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">
-                          10
-                        </div>
-                        <div className="text-[#f1e8eb]/80 text-base">THU</div>
-                      </div>
-                      <div className="text-[#655b5e] text-3xl font-bold self-center">
-                        &
-                      </div>
-                      <div className="text-center">
-                        <div className="text-[#d89b1d] text-6xl font-bold mb-2">
-                          11
-                        </div>
-                        <div className="text-[#f1e8eb]/80 text-base">FRI</div>
-                      </div>
-                    </div>
-
-                    <div className="mt-8 pt-6 border-t border-[#655b5e]/30 flex justify-between items-center">
-                      <div className="flex items-center">
-                        <Clock className="h-5 w-5 text-[#d89b1d] mr-2" />
-                        <span className="text-base text-[#f1e8eb]/80">
-                          2 Days
-                        </span>
-                      </div>
-                      <div className="flex items-center">
-                        <MapPin className="h-5 w-5 text-[#d89b1d] mr-2" />
-                        <span className="text-base text-[#f1e8eb]/80">
-                          VNR VJIET
-                        </span>
-                      </div>
-                    </div>
-                  </div>
                   <motion.p
-                    className="max-w-[600px] text-[#f1e8eb]/80 mt-4"
+                    className="max-w-[800px] text-[#f1e8eb]/80"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.9 }}
@@ -143,12 +102,58 @@ export default function Home() {
                   </motion.p>
                 </div>
 
+                {/* Calendar widget repositioned */}
+                <div className="calendar-widget bg-[#030303] backdrop-blur-md border border-[#655b5e]/50 rounded-lg p-6 shadow-lg shadow-[#d89b1d]/20 max-w-md mx-auto mt-4">
+                  <div className="flex items-center justify-between mb-4">
+                    <h3 className="text-[#d89b1d] font-bold text-xl tracking-wide">
+                      APRIL 2025
+                    </h3>
+                    <div className="p-3 rounded-md bg-[#655b5e]/20">
+                      <Calendar className="w-6 h-6 text-[#d89b1d]" />
+                    </div>
+                  </div>
+
+                  <div className="flex justify-center space-x-12 mb-6">
+                    <div className="text-center">
+                      <div className="text-[#d89b1d] text-6xl font-bold mb-2">
+                        10
+                      </div>
+                      <div className="text-[#f1e8eb]/80 text-base">THU</div>
+                    </div>
+                    <div className="text-[#655b5e] text-3xl font-bold self-center">
+                      &
+                    </div>
+                    <div className="text-center">
+                      <div className="text-[#d89b1d] text-6xl font-bold mb-2">
+                        11
+                      </div>
+                      <div className="text-[#f1e8eb]/80 text-base">FRI</div>
+                    </div>
+                  </div>
+
+                  <div className="mt-6 pt-4 border-t border-[#655b5e]/30 flex justify-between items-center">
+                    <div className="flex items-center">
+                      <Clock className="h-5 w-5 text-[#d89b1d] mr-2" />
+                      <span className="text-base text-[#f1e8eb]/80">
+                        2 Days
+                      </span>
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="h-5 w-5 text-[#d89b1d] mr-2" />
+                      <span className="text-base text-[#f1e8eb]/80">
+                        VNR VJIET
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.5, delay: 1.1 }}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
+                  className="mt-4"
                 >
                   <Link href="/events">
                     <Button
@@ -166,7 +171,7 @@ export default function Home() {
         </section>
 
         {/* About Section */}
-        <section id="about" ref={aboutRef} className="py-20 bg-[#030303]">
+        <section id="about" ref={aboutRef} className="py-12 bg-[#030303]">
           <div className="container px-4 md:px-6">
             <motion.div
               className="flex flex-col items-center space-y-4 text-center mb-10"
@@ -311,7 +316,7 @@ export default function Home() {
         <section
           id="highlights"
           ref={highlightsRef}
-          className="py-20 bg-[#030303]"
+          className="py-16 bg-[#030303]"
         >
           <div className="container px-4 md:px-6">
             <motion.div
