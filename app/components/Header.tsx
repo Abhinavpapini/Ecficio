@@ -253,7 +253,7 @@ export default function Header({
             {/* Social Media Links or Additional Info */}
             <div className="mt-auto px-6 py-8 border-t border-[#655b5e]/30">
               <p className="text-sm text-gray-400 text-center">
-                Ecficio 7.0H - The Human Side of Technology
+                Ecficio 7.0ᴴ
               </p>
             </div>
           </div>

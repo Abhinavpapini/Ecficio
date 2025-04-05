@@ -6,7 +6,7 @@ import { Button } from "@/app/components/ui/button";
 import { ChevronRight, Calendar, Users, Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import RollingGallery from "./RollingGallery";
+import RollingGallery from "./components/ui/RollingGallery";
 
 export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
@@ -321,7 +321,7 @@ export default function Home() {
         >
           <div className="container px-4 md:px-6">
             <motion.div
-              className="flex flex-col items-center space-y-4 text-center mb-10"
+              className="flex flex-col items-center space-y-4 text-center"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-100px" }}

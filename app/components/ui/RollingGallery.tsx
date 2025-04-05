@@ -166,21 +166,21 @@ const RollingGallery = ({
   };
 
   return (
-    <div className="relative h-[300px] md:h-[600px] w-full overflow-hidden my-3">
-      <div
+    <div className="relative h-[300px] md:h-[350px] w-full overflow-hidden mt-1">
+      {/* <div
         className="absolute top-0 left-0 h-full w-[48px] z-10"
         style={{
           background:
             "linear-gradient(to left, rgba(0,0,0,0) 0%, #030303 100%)",
         }}
-      />
-      <div
+      /> */}
+      {/* <div
         className="absolute top-0 right-0 h-full w-[48px] z-10"
         style={{
           background:
             "linear-gradient(to right, rgba(0,0,0,0) 0%, #030303 100%)",
         }}
-      />
+      /> */}
 
       <div className="flex h-full items-center justify-center [perspective:1600px] [transform-style:preserve-3d]">
         <motion.div
@@ -212,7 +212,6 @@ const RollingGallery = ({
                   transform: `rotateY(${angle}deg) translateZ(${radius}px)`,
                 }}
               >
-                {/* Add a container div to correct the image orientation */}
                 <div style={{ transform: `rotateY(${-angle}deg)` }}>
                   <img
                     src={url}
