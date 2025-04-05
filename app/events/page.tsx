@@ -22,8 +22,8 @@ const events = [
     id: 2,
     title: "Internship Drive",
     date: "April 10 & 11, 2025",
-    time: "10:00 AM - 5:00 PM",
-    location: "VJIM",
+    time: "9:00 AM - 5:00 PM",
+    location: "VJIM Canteen",
     description:
       "An exclusive recruitment drive where startups and companies offer internships to talented students. A golden opportunity to gain industry exposure, enhance your resume, and kickstart your professional journey.",
     badge: "Featured",
@@ -33,8 +33,8 @@ const events = [
     id: 3,
     title: "Investor Pitch",
     date: "April 10, 2025",
-    time: "1:30 PM - 5:00 PM",
-    location: "VJIM Seminar Hall",
+    time: "1:30 PM onwards",
+    location: "VJIM Classroom",
     description:
       "A formal pitching event where selected teams present their startups to a panel of investors, incubators, and mentors. Participants compete for funding, incubation support, and expert guidance.",
     badge: "Flagship Event",
@@ -54,8 +54,8 @@ const events = [
   {
     id: 5,
     title: "Standup Comedy",
-    date: "April 11, 2025",
-    time: "5:00 PM - 6:30 PM",
+    date: "April 10, 2025",
+    time: "5:00 PM",
     location: "KS Auditorium",
     description:
       "A laughter-packed event featuring hilarious stand-up performances by Vivek Muralidharan. A perfect chance to unwind and enjoy some light-hearted fun.",
@@ -67,7 +67,7 @@ const events = [
     title: "Networking Lunch",
     date: "April 11, 2025",
     time: "12:30 PM - 1:30 PM",
-    location: "VJIM",
+    location: "VJIM Stone Steps (Udaya Vatika)",
     description:
       "A relaxed networking session over lunch with investors, students, alumni, faculty, and industry professionals. New connections, and potential mentorships await.",
     badge: "Featured",
@@ -77,12 +77,78 @@ const events = [
     id: 7,
     title: "Consulting Firms Panel",
     date: "April 11, 2025",
-    time: "12:30 PM - 1:30 PM",
-    location: "VJIM",
+    time: "2:00 PM - 3:00 PM",
+    location: "VJIM Auditorium",
     description:
       "Join a panel with experts from top consulting firms, including MBB and the Big 4, as they share insights on consulting careers, interview tips, and growth strategies.",
     badge: "Cash Prizes",
     image: "/placeholder.svg?height=200&width=400&text=Startup+Pitch",
+  },
+  {
+    id: 8,
+    title: "Shark Up",
+    date: "April 10, 2025",
+    time: "2:00 PM - 5:00 PM",
+    location: "New Block",
+    description:
+      "Ever wanted to be a shark like in Shark Tank? Now's your chance to judge real-time pitches, question the founders, and decide where you'd put your money. Trust your gut—or risk missing out on the next big thing.",
+    badge: "Featured",
+    image: "/placeholder.svg?height=200&width=400&text=Shark+Up",
+  },
+  {
+    id: 9,
+    title: "Pitch Sprint",
+    date: "April 11, 2025",
+    time: "10:00 AM - 1:00 PM",
+    location: "New Block",
+    description:
+      "Think fast, pitch smart, and get ready to be grilled. Your idea will be picked apart—live. Take the feedback, fix the flaws, and come back stronger. It's pressure, but with purpose.",
+    badge: "Cash Prizes",
+    image: "/placeholder.svg?height=200&width=400&text=Pitch+Sprint",
+  },
+  {
+    id: 10,
+    title: "Reboot & Rebrand",
+    date: "April 10, 2025",
+    time: "2:00 PM - 5:00 PM",
+    location: "New Block",
+    description:
+      "You know those brands that feel… outdated? Here's your shot to flip the script. Reinvent their vibe, strategy, and story—and show the world what they could be.",
+    badge: "Workshop",
+    image: "/placeholder.svg?height=200&width=400&text=Reboot+Rebrand",
+  },
+  {
+    id: 11,
+    title: "Conan Detective",
+    date: "April 11, 2025",
+    time: "10:00 AM - 3:00 PM",
+    location: "Open Area Beside A Block",
+    description:
+      "A startup's gone rogue—and you're on the case. Interview shady suspects, spot red flags, and crack the con. Will you solve the mystery, or get played?",
+    badge: "Fun Activity",
+    image: "/placeholder.svg?height=200&width=400&text=Conan+Detective",
+  },
+  {
+    id: 12,
+    title: "AdJam",
+    date: "April 11, 2025",
+    time: "1:30 PM - 2:30 PM",
+    location: "New Block",
+    description:
+      "Think you can sell anything? Here's the ultimate ad showdown. Make it funny, emotional, or just plain bizarre—but whatever you do, make it memorable.",
+    badge: "Competition",
+    image: "/placeholder.svg?height=200&width=400&text=AdJam",
+  },
+  {
+    id: 13,
+    title: "The Wolf of Wall Street",
+    date: "April 10, 2025",
+    time: "2:00 PM - 5:00 PM",
+    location: "New Block",
+    description:
+      "Whether you're pitching the next unicorn or betting on one, this game's all about the hustle. Build, invest, negotiate—every move counts. Time to see who's really got the business game.",
+    badge: "Featured",
+    image: "/placeholder.svg?height=200&width=400&text=Wolf+Of+Wall+Street",
   },
 ];
 
@@ -146,15 +212,24 @@ function EventCard({ event }: { event: Event }) {
         <p className="text-[#f1e8eb]/80 mb-6 flex-grow">{event.description}</p>
 
         <div className="flex flex-col sm:flex-row gap-3 mt-auto">
-          <Button className="flex-1 bg-[#d89b1d] hover:bg-[#d89b1d]/90 text-[#030303] group">
-            Register Now
-            <motion.span
-              initial={{ x: 0 }}
-              whileHover={{ x: 3 }}
-              transition={{ duration: 0.2 }}
+          <Button
+            className="flex-1 bg-[#d89b1d] hover:bg-[#d89b1d]/90 text-[#030303] group"
+            asChild
+          >
+            <a
+              href="https://forms.gle/Wy5FnNAepxj8nYWR7"
+              target="_blank"
+              rel="noopener noreferrer"
             >
-              →
-            </motion.span>
+              Register Now
+              <motion.span
+                initial={{ x: 0 }}
+                whileHover={{ x: 3 }}
+                transition={{ duration: 0.2 }}
+              >
+                →
+              </motion.span>
+            </a>
           </Button>
           <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
             <Button
