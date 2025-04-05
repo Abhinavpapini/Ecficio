@@ -16,7 +16,7 @@ const events = [
     description:
       "An exhibition where student entrepreneurs showcase their startups, prototypes, and innovative business ideas. It offers a platform for visibility, feedback, and potential collaboration with investors and industry leaders.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?height=200&width=400&text=Hackathon",
+    image: "/events/StartupExpo.png",
   },
   {
     id: 2,
@@ -27,7 +27,7 @@ const events = [
     description:
       "An exclusive recruitment drive where startups and companies offer internships to talented students. A golden opportunity to gain industry exposure, enhance your resume, and kickstart your professional journey.",
     badge: "Featured",
-    image: "/placeholder.svg?height=200&width=400&text=AI+Summit",
+    image: "/events/InternshipDrive.png",
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const events = [
     description:
       "A formal pitching event where selected teams present their startups to a panel of investors, incubators, and mentors. Participants compete for funding, incubation support, and expert guidance.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?height=200&width=400&text=Cultural+Night",
+    image: "/events/InvestorPitch.png",
   },
   {
     id: 4,
@@ -60,7 +60,7 @@ const events = [
     description:
       "A laughter-packed event featuring hilarious stand-up performances by Vivek Muralidharan. A perfect chance to unwind and enjoy some light-hearted fun.",
     badge: "Exclusive Event",
-    image: "/placeholder.svg?height=200&width=400&text=Design+Thinking",
+    image: "/events/StandupComedy.png",
   },
   {
     id: 6,
@@ -71,7 +71,7 @@ const events = [
     description:
       "A relaxed networking session over lunch with investors, students, alumni, faculty, and industry professionals. New connections, and potential mentorships await.",
     badge: "Featured",
-    image: "/placeholder.svg?height=200&width=400&text=Startup+Pitch",
+    image: "/events/NetworkingLunch.png",
   },
   {
     id: 7,

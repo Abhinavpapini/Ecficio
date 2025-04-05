@@ -7,9 +7,9 @@ import { motion } from "framer-motion";
 
 interface TeamMember {
   name: string;
-  role: string;
+  rollNumber: string;
+  department: string;
   image: string;
-  description: string;
 }
 
 interface TeamSection {
@@ -30,16 +30,16 @@ const teamData: TeamData = {
     members: [
       {
         name: "Neha Kapoor",
-        role: "Operations Manager",
-        image: "https://drive.google.com/open?id=1Vvu64hpq7tL3oxCxoWse6063XKvPx62N",
-        description: "Managing day-to-day operations and event logistics.",
+        rollNumber: "12345",
+        department: "Management",
+        image:
+          "https://drive.google.com/open?id=1Vvu64hpq7tL3oxCxoWse6063XKvPx62N",
       },
       {
         name: "Siddharth Jain",
-        role: "Event Coordinator",
+        rollNumber: "67890",
+        department: "Event Planning",
         image: "/images/team/event-coordinator.jpg",
-        description:
-          "Planning and coordinating event schedules and activities.",
       },
     ],
   },
@@ -50,15 +50,15 @@ const teamData: TeamData = {
     members: [
       {
         name: "Meera Nair",
-        role: "Design Head",
+        rollNumber: "11223",
+        department: "Design",
         image: "/images/team/design.jpg",
-        description: "Creating visual assets and branding for the festival.",
       },
       {
         name: "Amit Verma",
-        role: "Editor",
+        rollNumber: "44556",
+        department: "Editorial",
         image: "/images/team/editor.jpg",
-        description: "Editing and refining content for publications and media.",
       },
     ],
   },
@@ -69,16 +69,15 @@ const teamData: TeamData = {
     members: [
       {
         name: "Sanya Gupta",
-        role: "Marketing Lead",
+        rollNumber: "77889",
+        department: "Marketing",
         image: "/images/team/marketing.jpg",
-        description:
-          "Developing and executing marketing strategies to maximize reach.",
       },
       {
         name: "Rohan Das",
-        role: "Social Media Manager",
+        rollNumber: "99001",
+        department: "Social Media",
         image: "/images/team/social-media.jpg",
-        description: "Managing social media platforms and audience engagement.",
       },
     ],
   },
@@ -89,16 +88,15 @@ const teamData: TeamData = {
     members: [
       {
         name: "Kavita Joshi",
-        role: "Finance Manager",
+        rollNumber: "22334",
+        department: "Finance",
         image: "/images/team/finance.jpg",
-        description: "Overseeing financial planning and budget allocation.",
       },
       {
         name: "Rajesh Iyer",
-        role: "Documentation Specialist",
+        rollNumber: "55667",
+        department: "Documentation",
         image: "/images/team/documentation.jpg",
-        description:
-          "Maintaining detailed records and reports for the festival.",
       },
     ],
   },
@@ -142,7 +140,7 @@ export default function MembersPage() {
             <div className="relative w-40 h-40 rounded-full overflow-hidden mb-4 border-2 border-[#d89b1d] p-1">
               <Image
                 src={member.image}
-                alt={member.role}
+                alt={member.name}
                 fill
                 sizes="(max-width: 160px) 100vw, 160px"
                 priority={index < 2}
@@ -150,9 +148,8 @@ export default function MembersPage() {
               />
             </div>
             <h3 className="text-xl font-bold text-[#f1e8eb]">{member.name}</h3>
-            <p className="text-[#d89b1d] font-medium mb-2">{member.role}</p>
-            <p className="text-[#655b5e] text-sm max-w-xs">
-              {member.description}
+            <p className="text-[#d89b1d] font-medium mb-2">
+              {member.rollNumber}, {member.department}
             </p>
           </motion.div>
         ))}
