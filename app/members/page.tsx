@@ -31,16 +31,16 @@ const teamData: TeamData = {
       "Coordinating operations and ensuring smooth execution of events.",
     members: [
       {
-        name: "Akshaya Penumathsa",
-        rollNumber: "23071A6645",
-        department: "AIML",
-        image: "/members/7.jpg",
-      },
-      {
         name: "Abhinav Papini",
         rollNumber: "23071A05B2",
         department: "CSE",
         image: "/members/1.png",
+      },
+      {
+        name: "Akshaya Penumathsa",
+        rollNumber: "23071A6645",
+        department: "AIML",
+        image: "/members/7.jpg",
       },
       {
         name: "Badduri Harsha",
@@ -59,6 +59,12 @@ const teamData: TeamData = {
         rollNumber: "24071A0276",
         department: "EEE",
         image: "/members/CSSupraja.jpg",
+      },
+      {
+        name: "G.Pujith Gupta",
+        rollNumber: "22071A0338",
+        department: "ME",
+        image: "/members/22.png",
       },
       {
         name: "Hanvith Sai Alla",
@@ -85,10 +91,28 @@ const teamData: TeamData = {
         image: "/members/2.png",
       },
       {
+        name: "M.Padma Tejaswi",
+        rollNumber: "23071A12A4",
+        department: "IT",
+        image: "/members/20.png",
+      },
+      {
         name: "Mahitha",
         rollNumber: "23071A6681",
         department: "AIML",
         image: "/members/Mahitha.jpg",
+      },
+      {
+        name: "Manasa Garimella",
+        rollNumber: "24071A04G3",
+        department: "ECE",
+        image: "/members/ManasaGarimella.jpg",
+      },
+      {
+        name: "Manikanta Pendela",
+        rollNumber: "23071A05B5",
+        department: "CSE",
+        image: "/members/4.png",
       },
       {
         name: "Nithya Pranavi",
@@ -97,16 +121,16 @@ const teamData: TeamData = {
         image: "/members/3.png",
       },
       {
-        name: "Pendela Manikanta",
-        rollNumber: "23071A05B5",
-        department: "CSE",
-        image: "/members/4.png",
-      },
-      {
         name: "Praneeth Dutt",
         rollNumber: "23071A66B0",
         department: "AIML",
         image: "/members/18.png",
+      },
+      {
+        name: "Renith Raj",
+        rollNumber: "22071A0393",
+        department: "ME",
+        image: "/members/RenithRaj.jpeg",
       },
       {
         name: "Revanth Patlolla",
@@ -115,10 +139,16 @@ const teamData: TeamData = {
         image: "/members/5.png",
       },
       {
-        name: "Sampreeth",
-        rollNumber: "23075A0320",
-        department: "ME",
-        image: "/members/CD.jpg",
+        name: "Sai Prabhath",
+        rollNumber: "23071A04Q8",
+        department: "ECE",
+        image: "/members/SaiPrabhath.jpeg",
+      },
+      {
+        name: "Sansitha",
+        rollNumber: "22071A0408",
+        department: "ECE",
+        image: "/members/Sansitha.jpg",
       },
       {
         name: "Shaheer Rayhan",
@@ -131,6 +161,12 @@ const teamData: TeamData = {
         rollNumber: "22071A02C3",
         department: "EEE",
         image: "/members/ShaikSiddique.jpg",
+      },
+      {
+        name: "S.Lalithaditya",
+        rollNumber: "23071A12B9",
+        department: "IT",
+        image: "/members/21.png",
       },
       {
         name: "Varshaa Balasubramanian",
@@ -148,7 +184,19 @@ const teamData: TeamData = {
         name: "Vinati Vege",
         rollNumber: "23071A05D4",
         department: "CSE",
-        image: "/members/VinatiVege.jpeg",
+        image: "/members/19.png",
+      },
+      {
+        name: "Vishesh",
+        rollNumber: "22071A0309",
+        department: "ME",
+        image: "/members/Vishesh.jpeg",
+      },
+      {
+        name: "Vishnu Jakkula",
+        rollNumber: "22071A12E4",
+        department: "IT",
+        image: "/members/VishnuJakkula.jpg",
       },
       {
         name: "Yagati Vaishnavi",
@@ -188,28 +236,46 @@ const teamData: TeamData = {
         image: "/members/10.png",
       },
       {
+        name: "K. Roshan Kumar",
+        rollNumber: "23071A1034",
+        department: "EIE",
+        image: "/members/KRoshanKumar.jpg",
+      },
+      {
         name: "Manoj Kumar Jampala",
         rollNumber: "22071A12E5",
         department: "IT",
         image: "/members/ManojKumarJampala.jpg",
       },
       {
-        name: "Nena Yamuna",
+        name: "Meenakshi Vannala",
+        rollNumber: "21071A0262",
+        department: "EEE",
+        image: "/members/MeenakshiVannala.jpg",
+      },
+      {
+        name: "Neha Yamuna",
         rollNumber: "23071A1044",
         department: "EIE",
         image: "/members/16.png",
-      },
-      {
-        name: "R.Dhawan Kumar",
-        rollNumber: "21071A0252",
-        department: "EEE",
-        image: "/members/8.png",
       },
       {
         name: "Patnala Maheshwar",
         rollNumber: "23071A66B6",
         department: "AIML",
         image: "/members/PatnalaMaheshwar.jpg",
+      },
+      {
+        name: "Saaketh Pallikonda",
+        rollNumber: "22071A12H3",
+        department: "IT",
+        image: "/members/SaakethPallikonda.webp",
+      },
+      {
+        name: "Sampreeth",
+        rollNumber: "23075A0320",
+        department: "ME",
+        image: "/members/CD.jpg",
       },
       {
         name: "Srivalli Ramini",
@@ -279,6 +345,30 @@ const teamData: TeamData = {
         image: "/members/14.png",
       },
       {
+        name: "M Haarika",
+        rollNumber: "22071A6233",
+        department: "CSE-CYS",
+        image: "/members/MHaarika.jpg",
+      },
+      {
+        name: "Pranav Ankam",
+        rollNumber: "23071A04B9",
+        department: "ECE",
+        image: "/members/PranavAnkam.jpg",
+      },
+      {
+        name: "Pothireddy Nishma Reddy",
+        rollNumber: "22071A1049",
+        department: "EIE",
+        image: "/members/NishmaReddy.jpeg",
+      },
+      {
+        name: "Sachin Tripathi",
+        rollNumber: "24071A6249",
+        department: "CSE-CYS",
+        image: "/members/SachinTripathi.jpg",
+      },
+      {
         name: "Sripoojitha Miryala",
         rollNumber: "22071A3235",
         department: "CSBS",
@@ -322,16 +412,22 @@ const teamData: TeamData = {
       "Ensuring accurate records and managing the festival's budget.",
     members: [
       {
+        name: "Abdul Majed ",
+        rollNumber: "22071A1056",
+        department: "EIE",
+        image: "/members/12.png",
+      },
+      {
         name: "Rayapureddy Omkar",
         rollNumber: "23075A0314",
         department: "ME",
         image: "/members/RayapureddyOmkarVeera.jpg",
       },
       {
-        name: "Abdul Majed ",
-        rollNumber: "22071A1056",
-        department: "EIE",
-        image: "/members/12.png",
+        name: "Shishir Kasturi",
+        rollNumber: "22071A0397",
+        department: "ME",
+        image: "/members/23.png",
       },
       {
         name: "Vinay Rathod",
