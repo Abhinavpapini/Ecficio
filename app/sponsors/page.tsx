@@ -102,7 +102,7 @@ export default function SponsorsPage() {
                       </th>
                       <th className="p-4">
                         <div className="flex flex-col items-center">
-                          <div className="bg-[#e5e4e2] rounded-full p-2 mb-2">
+                          <div className="bg-[#8c8c8c] rounded-full p-2 mb-2">
                             <Image
                               src="/placeholder.svg?height=40&width=40&text=P"
                               alt="Platinum"
@@ -112,7 +112,7 @@ export default function SponsorsPage() {
                             />
                           </div>
                           <span className="font-bold">Platinum</span>
-                          <span className="text-[#8a9a9b] text-sm">₹3,00,000</span>
+                          <span className="text-[#d89b1d] text-sm">₹3,00,000</span>
                         </div>
                       </th>
                       <th className="p-4">
@@ -209,50 +209,60 @@ export default function SponsorsPage() {
                       <td className="p-4 text-center">4</td>
                     </tr>
                     <tr className="border-b border-[#655b5e]/20">
-                      <td className="p-4">Logo Placement<br /><span className="text-xs">Banners • Certificates • Social Posts • T-shirts (optional) • Website</span></td>
+                      <td className="p-4">Logo Placement<br />
+                        <span className="text-xs flex flex-col space-y-1 mt-1">
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-orange-500 mr-1"></span> Banners</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-green-500 mr-1"></span> Certificates</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-blue-500 mr-1"></span> Social Media</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-red-500 mr-1"></span> T-shirts (optional)</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-yellow-500 mr-1"></span> Event App</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-purple-500 mr-1"></span> Website</span>
+                          <span><span className="inline-block h-3 w-3 rounded-full bg-pink-500 mr-1"></span> Stage Backdrop</span>
+                        </span>
+                      </td>
                       <td className="p-4 text-center">
                         <div className="flex justify-center space-x-1">
-                          <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
+                          <div className="h-3 w-3 rounded-full bg-orange-500" title="Banners"></div>
+                          <div className="h-3 w-3 rounded-full bg-blue-500" title="Social Media"></div>
+                          <div className="h-3 w-3 rounded-full bg-purple-500" title="Website"></div>
                         </div>
                       </td>
                       <td className="p-4 text-center">
                         <div className="flex justify-center space-x-1">
-                          <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-red-500"></div>
+                          <div className="h-3 w-3 rounded-full bg-orange-500" title="Banners"></div>
+                          <div className="h-3 w-3 rounded-full bg-blue-500" title="Social Media"></div>
+                          <div className="h-3 w-3 rounded-full bg-purple-500" title="Website"></div>
+                          <div className="h-3 w-3 rounded-full bg-red-500" title="T-shirts"></div>
                         </div>
                       </td>
                       <td className="p-4 text-center">
                         <div className="flex justify-center space-x-1">
-                          <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
+                          <div className="h-3 w-3 rounded-full bg-orange-500" title="Banners"></div>
+                          <div className="h-3 w-3 rounded-full bg-green-500" title="Certificates"></div>
+                          <div className="h-3 w-3 rounded-full bg-blue-500" title="Social Media"></div>
+                          <div className="h-3 w-3 rounded-full bg-red-500" title="T-shirts"></div>
+                          <div className="h-3 w-3 rounded-full bg-purple-500" title="Website"></div>
                         </div>
                       </td>
                       <td className="p-4 text-center">
                         <div className="flex justify-center space-x-1">
-                          <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
+                          <div className="h-3 w-3 rounded-full bg-orange-500" title="Banners"></div>
+                          <div className="h-3 w-3 rounded-full bg-green-500" title="Certificates"></div>
+                          <div className="h-3 w-3 rounded-full bg-blue-500" title="Social Media"></div>
+                          <div className="h-3 w-3 rounded-full bg-red-500" title="T-shirts"></div>
+                          <div className="h-3 w-3 rounded-full bg-yellow-500" title="Event App"></div>
+                          <div className="h-3 w-3 rounded-full bg-purple-500" title="Website"></div>
                         </div>
                       </td>
                       <td className="p-4 text-center">
                         <div className="flex justify-center space-x-1">
-                          <div className="h-3 w-3 rounded-full bg-orange-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-green-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-blue-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-red-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-yellow-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-purple-500"></div>
-                          <div className="h-3 w-3 rounded-full bg-pink-500"></div>
+                          <div className="h-3 w-3 rounded-full bg-orange-500" title="Banners"></div>
+                          <div className="h-3 w-3 rounded-full bg-green-500" title="Certificates"></div>
+                          <div className="h-3 w-3 rounded-full bg-blue-500" title="Social Media"></div>
+                          <div className="h-3 w-3 rounded-full bg-red-500" title="T-shirts"></div>
+                          <div className="h-3 w-3 rounded-full bg-yellow-500" title="Event App"></div>
+                          <div className="h-3 w-3 rounded-full bg-purple-500" title="Website"></div>
+                          <div className="h-3 w-3 rounded-full bg-pink-500" title="Stage Backdrop"></div>
                         </div>
                       </td>
                     </tr>

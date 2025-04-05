@@ -32,20 +32,19 @@ const RollingGallery = ({
 }: RollingGalleryProps) => {
   images = images.length > 0 ? images : IMGS;
 
-  const [isScreenSizeSm, setIsScreenSizeSm] = useState(
-    typeof window !== 'undefined' ? window.innerWidth <= 768 : false
-  );
-  
-  const [screenWidth, setScreenWidth] = useState(
-    typeof window !== 'undefined' ? window.innerWidth : 0
-  );
+  const [isScreenSizeSm, setIsScreenSizeSm] = useState(false);
+  const [screenWidth, setScreenWidth] = useState(0);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
+      setIsScreenSizeSm(window.innerWidth <= 768);
+      setScreenWidth(window.innerWidth);
+
       const handleResize = () => {
         setIsScreenSizeSm(window.innerWidth <= 768);
         setScreenWidth(window.innerWidth);
       };
+
       window.addEventListener("resize", handleResize);
       return () => window.removeEventListener("resize", handleResize);
     }
