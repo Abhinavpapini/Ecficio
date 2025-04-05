@@ -45,22 +45,22 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
       <main>
-        {/* Video Section - Reduced height */}
-        <section className="relative overflow-hidden">
-          <div className="video-container">
-            <video
-              className="w-full h-[30vh] md:h-[40vh] object-cover"
-              autoPlay
-              loop
-              muted
-              playsInline
-            >
-              <source src="/LogoReveal.mp4" type="video/mp4" />
-              Your browser does not support the video tag.
-            </video>
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
-          </div>
-        </section>
+        {/* Video Section - Increased height */}
+<section className="relative overflow-hidden">
+  <div className="video-container w-full"> {/* Add w-full to ensure container takes full width */}
+    <video
+      className="w-full h-[50vh] md:h-[60vh] object-cover"
+      autoPlay
+      loop
+      muted
+      playsInline
+    >
+      <source src="/LogoReveal.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+  </div>
+</section>
 
         {/* Hero Section - Minimal padding and maximized logo size */}
         <section className="relative overflow-hidden py-2">
