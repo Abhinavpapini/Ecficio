@@ -22,7 +22,7 @@ interface TeamData {
   [key: string]: TeamSection;
 }
 
-const placeholderImage = "/images/placeholder.png";
+const placeholderImage = "/members/placeholder.png";
 
 const teamData: TeamData = {
   logistics: {
@@ -192,85 +192,85 @@ const teamData: TeamData = {
         name: "Akanksha Godavarthi",
         rollNumber: "21071A7220",
         department: "AID",
-        image: "/images/outreach/akanksha_godavarthi.jpg",
+        image: "/members/AkankshaAkankshaGodavarthi.jpg",
       },
       {
         name: "Chagarlamudi Rohitha",
         rollNumber: "23071A6779",
         department: "CSDS",
-        image: "/images/outreach/chagarlamudi_rohitha.jpg",
+        image: "/members/ChagarlamudiRohitha.jpg",
       },
       {
         name: "Drishika Mekonda",
         rollNumber: "23075A1217",
         department: "IT",
-        image: "/images/outreach/drishika_mekonda.jpg",
+        image: "/members/MDrishika.jpeg",
       },
       {
         name: "J. ADWAITHA",
         rollNumber: "23071A3224",
         department: "CSBS",
-        image: "/images/outreach/j_adwaitha.jpg",
+        image: "/members/JampellyAdwaitha.jpg",
       },
       {
         name: "K Vamsi Karthikeya",
         rollNumber: "22071A0321",
         department: "ME",
-        image: "/images/outreach/k_vamsi_karthikeya.jpg",
+        image: "/members/VamsiKarthikeya.png",
       },
       {
         name: "Nimishakavi A Hrushikesh Sarma",
         rollNumber: "21071A0245",
         department: "EEE",
-        image: "/images/outreach/nimishakavi_hrushikesh.jpg",
+        image: "/members/HrushikeshSarma.jpeg",
       },
       {
         name: "PUVVALA BHANU SATISH",
         rollNumber: "22071A6749",
         department: "CSDS",
-        image: "/images/outreach/puvvala_bhanu.jpg",
+        image: "/members/PuvvalaBhanuSatish.jpg",
       },
       {
         name: "Sachin Tripathi",
         rollNumber: "24071A6249",
         department: "Cys",
-        image: "/images/outreach/sachin_tripathi.jpg",
+        image: "/members/sachin_tripathi.jpg",
       },
       {
         name: "Sripoojitha Miryala",
         rollNumber: "22071A3235",
         department: "CSBS",
-        image: "/images/outreach/sripoojitha_miryala.jpg",
+        image: "/members/MiryalaSriPoojitha.jpg",
       },
       {
         name: "Sudeepthi Maadireddy",
         rollNumber: "22071A3251",
         department: "CSBS",
-        image: "/images/outreach/sudeepthi_maadireddy.jpg",
+        image: "/members/SudeepthiMaadireddy.jpg",
       },
       {
         name: "Veerabhadra Yerram",
         rollNumber: "24071A3262",
         department: "CSBS",
-        image: "/images/outreach/veerabhadra_yerram.jpg",
+        image: "/members/VeerabhadraYerram.jpg",
       },
       {
         name: "Vishal Pasumarty",
         rollNumber: "24071A67D5",
         department: "CSDS",
-        image: "/images/outreach/vishal_pasumarty.jpg",
+        image: "/members/VishalPasumarty.jpg",
       },
       {
         name: "Vishwanath Raja Chanda",
         rollNumber: "23071A0508",
         department: "CSE",
-        image: "/images/outreach/vishwanath_raja.jpg",
+        image: "/members/vishwanath_raja.jpg",
       },
       {
         name: "Vyshnavi Gottupalli",
         rollNumber: "23071A1083",
         department: "EIE",
-        image: "/images/outreach/vyshnavi_gottupalli.jpg",
+        image: "/members/GottupalliVyshnavi.jpg",
       },
     ],
   },
@@ -283,19 +283,19 @@ const teamData: TeamData = {
         name: "Rayapureddy Omkar Veera Sudheer",
         rollNumber: "23075A0314",
         department: "ME",
-        image: "/images/documentation/omkar_sudheer.jpg",
+        image: "/members/RayapureddyOmkarVeera.jpg",
       },
       {
         name: "Syed Abdul Majed Ahmed",
         rollNumber: "22071A1056",
         department: "EIE",
-        image: "/images/documentation/syed_abdul_majed.jpg",
+        image: "/members/SyedAbdul.jpg",
       },
       {
         name: "Vinay Rathod",
         rollNumber: "22071A03A3",
         department: "ME",
-        image: "/images/documentation/vinay_rathod.jpg",
+        image: "/members/VinayRathod.jpg",
       },
     ],
   },
@@ -326,7 +326,7 @@ export default function MembersPage() {
         />
       </motion.div>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="grid gap-6 md:grid-cols-3 lg:grid-cols-5">
         {team.members.map((member, index) => (
           <motion.div
             key={index}
