@@ -6,6 +6,7 @@ import { Button } from "@/app/components/ui/button";
 import { ChevronRight, Calendar, Users, Clock, MapPin } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import RollingGallery from "./RollingGallery";
 
 export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
@@ -335,8 +336,9 @@ export default function Home() {
                 of what to expect this year.
               </p>
             </motion.div>
+            <RollingGallery autoplay={true} pauseOnHover={true} />
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+            {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
                 <motion.div
                   key={item}
@@ -361,7 +363,7 @@ export default function Home() {
                   </div>
                 </motion.div>
               ))}
-            </div>
+            </div> */}
           </div>
         </section>
       </main>
