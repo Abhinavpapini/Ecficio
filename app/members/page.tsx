@@ -115,6 +115,12 @@ const teamData: TeamData = {
         image: "/members/4.png",
       },
       {
+        name: "Nikhil Chanda",
+        rollNumber: "23071A12H5",
+        department: "IT",
+        image: "/members/NikhilChanda.jpeg",
+      },
+      {
         name: "Nithya Pranavi",
         rollNumber: "23071A3261",
         department: "CSBS",
@@ -152,7 +158,7 @@ const teamData: TeamData = {
       },
       {
         name: "Shaheer Rayhan",
-        rollNumber: "23071a6957",
+        rollNumber: "23071A6957",
         department: "IOT",
         image: "/members/ShaikMohammedShaheerRayhan.jpeg",
       },
@@ -218,6 +224,12 @@ const teamData: TeamData = {
         image: "/members/AvaneeshChitta.jpg",
       },
       {
+        name: "Bodanapati Pavani",
+        rollNumber: "22071A6675",
+        department: "AIML",
+        image: "/members/BodanapatiPavani.jpg",
+      },
+      {
         name: "C Sharath",
         rollNumber: "22071A1055",
         department: "EIE",
@@ -278,6 +290,12 @@ const teamData: TeamData = {
         image: "/members/CD.jpg",
       },
       {
+        name: "Srija Reddy",
+        rollNumber: "22071A3250",
+        department: "CSBS",
+        image: "/members/SrijaReddy.jpeg",
+      },
+      {
         name: "Srivalli Ramini",
         rollNumber: "23071A6650",
         department: "AIML",
@@ -331,6 +349,12 @@ const teamData: TeamData = {
         rollNumber: "22071A0321",
         department: "ME",
         image: "/members/VamsiKarthikeya.png",
+      },
+      {
+        name: "Karthikeya Busupalli",
+        rollNumber: "22071A1008",
+        department: "EIE",
+        image: "/members/BKarthikeya.jpg",
       },
       {
         name: "Kush Modi",
@@ -412,10 +436,16 @@ const teamData: TeamData = {
       "Ensuring accurate records and managing the festival's budget.",
     members: [
       {
-        name: "Abdul Majed ",
+        name: "Abdul Majed",
         rollNumber: "22071A1056",
         department: "EIE",
         image: "/members/12.png",
+      },
+      {
+        name: "Pratheeka Dahagam",
+        rollNumber: "22071A0391",
+        department: "ME",
+        image: "/members/PratheekaDahagam.jpeg",
       },
       {
         name: "Rayapureddy Omkar",
