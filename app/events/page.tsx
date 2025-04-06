@@ -19,6 +19,7 @@ const events = [
     badge: "Flagship Event",
     image: "/events/7.webp"
   },
+  
   {
     id: 2,
     title: "Internship Drive",
