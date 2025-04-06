@@ -3,153 +3,171 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/app/components/ui/button";
-import { Calendar, Clock, MapPin, Share2, Users } from "lucide-react";
+import { Calendar, Clock, MapPin, Users } from "lucide-react";
 import { motion } from "framer-motion";
 
 const events = [
+  // Flagship Events
   {
     id: 1,
-    title: "Startup Expo",
-    date: "April 10 & 11, 2025",
-    time: "9:00 AM - 5:00 PM",
+    title: "Start Up Expo",
+    date: "10th & 11th April",
+    time: "",
     location: "VJIM Canteen",
-    description:
-      "An exhibition where student entrepreneurs showcase their startups, prototypes, and innovative business ideas. It offers a platform for visibility, feedback, and potential collaboration with investors and industry leaders.",
+    category: "Flagship Event",
+    description: "A grand exhibition of emerging startups, showcasing innovation, technology, and entrepreneurship.",
     badge: "Flagship Event",
-    image: "/events/StartupExpo.png",
+    image: "/placeholder.svg?text=StartUp+Expo"
   },
   {
     id: 2,
     title: "Internship Drive",
-    date: "April 10 & 11, 2025",
-    time: "9:00 AM - 5:00 PM",
+    date: "10th & 11th April",
+    time: "",
     location: "VJIM Canteen",
-    description:
-      "An exclusive recruitment drive where startups and companies offer internships to talented students. A golden opportunity to gain industry exposure, enhance your resume, and kickstart your professional journey.",
-    badge: "Featured",
-    image: "/events/InternshipDrive.png",
+    category: "Flagship Event",
+    description: "Connect with top startups and land exclusive internship opportunities.",
+    badge: "Flagship Event",
+    image: "/placeholder.svg?text=Internship+Drive"
   },
   {
     id: 3,
-    title: "Investor Pitch",
-    date: "April 10, 2025",
-    time: "1:30 PM onwards",
-    location: "VJIM Classroom",
-    description:
-      "A formal pitching event where selected teams present their startups to a panel of investors, incubators, and mentors. Participants compete for funding, incubation support, and expert guidance.",
+    title: "Investors Pitch",
+    date: "10th April",
+    time: "1:00 PM – 5:00 PM",
+    location: "VJIM Lecture Hall",
+    category: "Flagship Event",
+    description: "Where ideas meet investment. Witness the next big thing unfold.",
     badge: "Flagship Event",
-    image: "/events/InvestorPitch.png",
+    image: "/placeholder.svg?text=Investors+Pitch"
   },
   {
     id: 4,
-    title: "Fun & Domain-Based Activities",
-    date: "April 10 & 11, 2025",
-    time: "10:00 AM - 5:00 PM",
-    location: "VNR VJIET",
-    description:
-      "Engaging, interactive events that mix fun with learning — perfect for those who love quick thinking and creative problem-solving.",
-    badge: "Access to All",
-    image: "/placeholder.svg?height=200&width=400&text=Robotics",
+    title: "Stand Up Comedy",
+    date: "10th April",
+    time: "5:00 PM",
+    location: "KS Audi",
+    category: "Flagship Event",
+    description: "",
+    badge: "Flagship Event",
+    image: "/placeholder.svg?text=StandUp+Comedy"
   },
   {
     id: 5,
-    title: "Standup Comedy",
-    date: "April 10, 2025",
-    time: "5:00 PM",
-    location: "KS Auditorium",
-    description:
-      "A laughter-packed event featuring hilarious stand-up performances by Vivek Muralidharan. A perfect chance to unwind and enjoy some light-hearted fun.",
-    badge: "Exclusive Event",
-    image: "/events/StandupComedy.png",
+    title: "Networking Lunch",
+    date: "11th April",
+    time: "11:30 AM – 1:00 PM",
+    location: "VJIM Stone Steps (Udaya Vatika)",
+    category: "Flagship Event",
+    description: "",
+    badge: "Flagship Event",
+    image: "/placeholder.svg?text=Networking+Lunch"
   },
   {
     id: 6,
-    title: "Networking Lunch",
-    date: "April 11, 2025",
-    time: "12:30 PM - 1:30 PM",
-    location: "VJIM Stone Steps (Udaya Vatika)",
-    description:
-      "A relaxed networking session over lunch with investors, students, alumni, faculty, and industry professionals. New connections, and potential mentorships await.",
-    badge: "Featured",
-    image: "/events/NetworkingLunch.png",
+    title: "MBB Panel",
+    date: "11th April",
+    time: "2:00 PM – 3:00 PM",
+    location: "VJIM Audi",
+    category: "Flagship Event",
+    description: "",
+    badge: "Flagship Event",
+    image: "/placeholder.svg?text=MBB+Panel"
   },
+
+  // Fun Events
   {
     id: 7,
-    title: "Consulting Firms Panel",
-    date: "April 11, 2025",
-    time: "2:00 PM - 3:00 PM",
-    location: "VJIM Auditorium",
-    description:
-      "Join a panel with experts from top consulting firms, including MBB and the Big 4, as they share insights on consulting careers, interview tips, and growth strategies.",
-    badge: "Cash Prizes",
-    image: "/placeholder.svg?height=200&width=400&text=Startup+Pitch",
+    title: "SharkUp",
+    date: "10th April",
+    time: "1:00 PM – 4:00 PM",
+    location: "B-block Seminar Hall",
+    category: "Fun Event",
+    description: "A thrilling mock investment game where creativity meets strategy.",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=SharkUp"
   },
   {
     id: 8,
-    title: "Shark Up",
-    date: "April 10, 2025",
-    time: "2:00 PM - 5:00 PM",
-    location: "New Block",
-    description:
-      "Ever wanted to be a shark like in Shark Tank? Now's your chance to judge real-time pitches, question the founders, and decide where you'd put your money. Trust your gut—or risk missing out on the next big thing.",
-    badge: "Featured",
-    image: "/placeholder.svg?height=200&width=400&text=Shark+Up",
+    title: "Reboot & Rebrand",
+    date: "10th April",
+    time: "1:00 PM – 4:00 PM",
+    location: "E-033",
+    category: "Fun Event",
+    description: "Reimagine and revamp well-known brands with a twist.",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=Reboot+Rebrand"
   },
   {
     id: 9,
-    title: "Pitch Sprint",
-    date: "April 11, 2025",
-    time: "10:00 AM - 1:00 PM",
-    location: "New Block",
-    description:
-      "Think fast, pitch smart, and get ready to be grilled. Your idea will be picked apart—live. Take the feedback, fix the flaws, and come back stronger. It's pressure, but with purpose.",
-    badge: "Cash Prizes",
-    image: "/placeholder.svg?height=200&width=400&text=Pitch+Sprint",
+    title: "The WOWS",
+    date: "10th April",
+    time: "1:00 PM – 4:00 PM",
+    location: "A-013",
+    category: "Fun Event",
+    description: "Test your marketing instincts and quirky branding skills.",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=The+WOWS"
   },
   {
     id: 10,
-    title: "Reboot & Rebrand",
-    date: "April 10, 2025",
-    time: "2:00 PM - 5:00 PM",
-    location: "New Block",
-    description:
-      "You know those brands that feel… outdated? Here's your shot to flip the script. Reinvent their vibe, strategy, and story—and show the world what they could be.",
-    badge: "Workshop",
-    image: "/placeholder.svg?height=200&width=400&text=Reboot+Rebrand",
+    title: "Pitch Sprint",
+    date: "11th April",
+    time: "10:00 AM – 1:00 PM",
+    location: "E-012",
+    category: "Fun Event",
+    description: "Quickfire pitches and rapid innovation — can you keep up?",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=Pitch+Sprint"
   },
   {
     id: 11,
-    title: "Conan Detective",
-    date: "April 11, 2025",
-    time: "10:00 AM - 3:00 PM",
-    location: "Open Area Beside A Block",
-    description:
-      "A startup's gone rogue—and you're on the case. Interview shady suspects, spot red flags, and crack the con. Will you solve the mystery, or get played?",
-    badge: "Fun Activity",
-    image: "/placeholder.svg?height=200&width=400&text=Conan+Detective",
+    title: "Ad Jam",
+    date: "11th April",
+    time: "10:00 AM – 1:00 PM",
+    location: "E-032",
+    category: "Fun Event",
+    description: "Design a killer ad campaign with your team under pressure!",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=Ad+Jam"
   },
   {
     id: 12,
-    title: "AdJam",
-    date: "April 11, 2025",
-    time: "1:30 PM - 2:30 PM",
-    location: "New Block",
-    description:
-      "Think you can sell anything? Here's the ultimate ad showdown. Make it funny, emotional, or just plain bizarre—but whatever you do, make it memorable.",
-    badge: "Competition",
-    image: "/placeholder.svg?height=200&width=400&text=AdJam",
+    title: "Conan Detective",
+    date: "11th April",
+    time: "10:00 AM – 1:00 PM",
+    location: "Between PG and A Block",
+    category: "Fun Event",
+    description: "Put on your detective hat and solve the mysterious business case.",
+    badge: "Fun Event",
+    image: "/placeholder.svg?text=Conan+Detective"
   },
+
+  // Panel Discussions
   {
     id: 13,
-    title: "The Wolf of Wall Street",
-    date: "April 10, 2025",
-    time: "2:00 PM - 5:00 PM",
-    location: "New Block",
-    description:
-      "Whether you're pitching the next unicorn or betting on one, this game's all about the hustle. Build, invest, negotiate—every move counts. Time to see who's really got the business game.",
-    badge: "Featured",
-    image: "/placeholder.svg?height=200&width=400&text=Wolf+Of+Wall+Street",
+    title: "Panel Discussion/Fireside Chat",
+    date: "10th April",
+    time: "11:45 AM – 12:45 PM",
+    location: "B-block Seminar Hall",
+    category: "Panel Discussion",
+    description: "",
+    badge: "Panel",
+    image: "/placeholder.svg?text=Panel+Discussion"
   },
+
+  // Workshops
+  {
+    id: 14,
+    title: "Workshop",
+    date: "11th April",
+    time: "11:00 AM – 12:00 PM",
+    location: "B-block Seminar Hall",
+    category: "Workshop",
+    description: "",
+    badge: "Workshop",
+    image: "/placeholder.svg?text=Workshop"
+  }
 ];
 
 interface Event {
@@ -161,6 +179,7 @@ interface Event {
   description: string;
   badge: string;
   image: string;
+  category: string;
 }
 
 function EventCard({ event }: { event: Event }) {
@@ -231,15 +250,7 @@ function EventCard({ event }: { event: Event }) {
               </motion.span>
             </a>
           </Button>
-          <motion.div whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
-            <Button
-              variant="outline"
-              size="icon"
-              className="border-[#655b5e] text-[#655b5e] hover:text-[#f1e8eb] hover:border-[#f1e8eb] bg-transparent hover:bg-[#655b5e]/10"
-            >
-              <Share2 className="h-4 w-4" />
-            </Button>
-          </motion.div>
+          {/* Share button removed as requested */}
         </div>
       </div>
     </motion.div>
@@ -249,13 +260,21 @@ function EventCard({ event }: { event: Event }) {
 export default function EventsPage() {
   const [activeCategory, setActiveCategory] = useState("all");
 
+  // Updated categories based on the actual event data
   const categories = [
     { id: "all", name: "All Events" },
-    { id: "technical", name: "Technical" },
-    { id: "cultural", name: "Cultural" },
-    { id: "workshops", name: "Workshops" },
-    { id: "competitions", name: "Competitions" },
+    { id: "Flagship Event", name: "Flagship Event" },
+    { id: "Fun Event", name: "Fun Event" },
+    { id: "Panel Discussion", name: "Panel Discussion" },
+    { id: "Workshop", name: "Workshop" },
   ];
+
+  // Filter events based on active category and sort alphabetically by title
+  const filteredEvents = activeCategory === "all" 
+    ? [...events].sort((a, b) => a.title.localeCompare(b.title))
+    : [...events]
+        .filter(event => event.category === activeCategory)
+        .sort((a, b) => a.title.localeCompare(b.title));
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
@@ -327,7 +346,7 @@ export default function EventsPage() {
         <section className="py-12 md:py-16">
           <div className="container px-4 md:px-6">
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {events.map((event) => (
+              {filteredEvents.map((event) => (
                 <EventCard key={event.id} event={event} />
               ))}
             </div>
