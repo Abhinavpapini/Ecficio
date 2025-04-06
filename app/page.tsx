@@ -12,14 +12,17 @@ export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
   const highlightsRef = useRef<HTMLElement>(null);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
-  
+
   // Adjust this offset value based on your header height
   const scrollOffset = 120; // Increased from 80 to give more space
 
   const scrollToSection = (section: string) => {
     const ref = section === "about" ? aboutRef : highlightsRef;
     if (ref.current) {
-      const topPosition = ref.current.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+      const topPosition =
+        ref.current.getBoundingClientRect().top +
+        window.pageYOffset -
+        scrollOffset;
       window.scrollTo({ top: topPosition, behavior: "smooth" });
     }
   };
@@ -45,7 +48,10 @@ export default function Home() {
         const sectionId = window.location.hash.substring(1);
         const section = document.getElementById(sectionId);
         if (section) {
-          const topPosition = section.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+          const topPosition =
+            section.getBoundingClientRect().top +
+            window.pageYOffset -
+            scrollOffset;
           window.scrollTo({ top: topPosition, behavior: "smooth" });
         }
       }, 300);
@@ -55,17 +61,17 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
       <main>
-        {/* Video Section - Increased height */}
+        {/* Video Section - Enhanced visibility for smaller screens */}
         <section className="relative overflow-hidden">
           <div className="video-container w-full">
             <video
-              className="w-full h-[50vh] md:h-[60vh] object-cover"
+              className="w-full h-[25vh] sm:h-[40vh] md:h-[70vh] object-cover"
               autoPlay
               loop
               muted
               playsInline
             >
-              <source src="/LogoReveal.mp4" type="video/mp4" />
+              <source src="/LogoReveal.webm" type="video/webm" />
               Your browser does not support the video tag.
             </video>
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
@@ -237,11 +243,10 @@ export default function Home() {
                 <div className="p-3 rounded-full bg-[#d89b1d]/10">
                   <MapPin className="h-8 w-8 text-[#d89b1d]" />
                 </div>
-                <h3 className="text-xl font-bold text-[#f1e8eb]">
-                  Venue
-                </h3>
+                <h3 className="text-xl font-bold text-[#f1e8eb]">Venue</h3>
                 <p className="text-center text-[#655b5e]">
-                  Hosted at Vallurupalli Nageswara Rao Vignana Jyothi Institute of Engineering and Technology.
+                  Hosted at Vallurupalli Nageswara Rao Vignana Jyothi Institute
+                  of Engineering and Technology.
                 </p>
               </motion.div>
 
@@ -348,21 +353,6 @@ export default function Home() {
             <RollingGallery autoplay={true} pauseOnHover={true} />
           </div>
         </section>
-
-        {/* Add Scroll to Top Button */}
-        {showScrollToTop && (
-          <motion.button
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed bottom-8 right-8 p-3 rounded-full bg-[#d89b1d] text-[#030303] shadow-lg z-50"
-            onClick={scrollToTop}
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M18 15l-6-6-6 6"/>
-            </svg>
-          </motion.button>
-        )}
       </main>
     </div>
   );
