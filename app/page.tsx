@@ -60,7 +60,7 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
-      <main>
+    <main>
         {/* Video Section - Enhanced visibility for smaller screens */}
         <section className="relative overflow-hidden">
           <div className="video-container w-full">

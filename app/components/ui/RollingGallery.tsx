@@ -13,20 +13,20 @@ interface RollingGalleryProps {
 }
 
 const IMGS: string[] = [ 
-  "/previous/1.png", 
-  "/previous/2.png",  
-  "/previous/3.png",
-  "/previous/14.png",
-  "/previous/5.png",
-  "/previous/6.png",
-  "/previous/7.png",
-  "/previous/8.png",
-  "/previous/9.png",
-  "/previous/10.png",
-  "/previous/11.png",
-  "/previous/12.png",
-  "/previous/13.png", 
-  "/previous/15.png",
+  "/previous/1.webp", 
+  "/previous/2.webp",  
+  "/previous/3.webp",
+  "/previous/14.webp",
+  "/previous/5.webp",
+  "/previous/6.webp",
+  "/previous/7.webp",
+  "/previous/8.webp",
+  "/previous/9.webp",
+  "/previous/10.webp",
+  "/previous/11.webp",
+  "/previous/12.webp",
+  "/previous/13.webp", 
+  "/previous/15.webp",
   
 ];
 

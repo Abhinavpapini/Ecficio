@@ -15,9 +15,9 @@ const events = [
     time: "",
     location: "VJIM Canteen",
     category: "Flagship Event",
-    description: "A grand exhibition of emerging startups, showcasing innovation, technology, and entrepreneurship.",
+    description: "An exhibition where student entrepreneurs showcase their startups, prototypes, and innovative business ideas. It offers a platform for visibility, feedback, and potential collaboration with investors and industry leaders.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=StartUp+Expo"
+    image: "/events/7.webp"
   },
   {
     id: 2,
@@ -26,9 +26,9 @@ const events = [
     time: "",
     location: "VJIM Canteen",
     category: "Flagship Event",
-    description: "Connect with top startups and land exclusive internship opportunities.",
+    description: "An exclusive recruitment drive where startups and companies offer internships to talented students. A golden opportunity to gain industry exposure, enhance your resume, and kickstart your professional journey.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=Internship+Drive"
+    image: "/events/12.webp"
   },
   {
     id: 3,
@@ -37,9 +37,9 @@ const events = [
     time: "1:00 PM – 5:00 PM",
     location: "VJIM Lecture Hall",
     category: "Flagship Event",
-    description: "Where ideas meet investment. Witness the next big thing unfold.",
+    description: "A formal pitching event where selected teams present their startups to a panel of investors, incubators, and mentors. Participants compete for funding, incubation support, and expert guidance.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=Investors+Pitch"
+    image: "/events/8.webp"
   },
   {
     id: 4,
@@ -48,9 +48,9 @@ const events = [
     time: "5:00 PM",
     location: "KS Audi",
     category: "Flagship Event",
-    description: "",
+    description: "A laughter-packed event featuring hilarious stand-up performances by Vivek Muralidharan. A perfect chance to unwind and enjoy some light-hearted fun.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=StandUp+Comedy"
+    image: "/events/14.webp"
   },
   {
     id: 5,
@@ -59,9 +59,9 @@ const events = [
     time: "11:30 AM – 1:00 PM",
     location: "VJIM Stone Steps (Udaya Vatika)",
     category: "Flagship Event",
-    description: "",
+    description: "A relaxed networking session over lunch with investors, fellow students, alumni, faculty, and industry professionals. Great conversations, new connections, and potential mentorships await.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=Networking+Lunch"
+    image: "/events/13.webp"
   },
   {
     id: 6,
@@ -70,9 +70,9 @@ const events = [
     time: "2:00 PM – 3:00 PM",
     location: "VJIM Audi",
     category: "Flagship Event",
-    description: "",
+    description: "A panel discussion featuring experts from leading consulting firms, including MBB (McKinsey, BCG, Bain) and the Big 4 (Deloitte, EY, KPMG, PwC). Gain insights into the consulting world, interview tips, and career growth strategies.",
     badge: "Flagship Event",
-    image: "/placeholder.svg?text=MBB+Panel"
+    image: "/events/1.webp"
   },
 
   // Fun Events
@@ -83,9 +83,9 @@ const events = [
     time: "1:00 PM – 4:00 PM",
     location: "B-block Seminar Hall",
     category: "Fun Event",
-    description: "A thrilling mock investment game where creativity meets strategy.",
+    description: "A thrilling mock investment game where creativity meets strategy. Part of our engaging, interactive events that blend fun with learning — perfect for those who enjoy fast-paced, creative challenges.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=SharkUp"
+    image: "/events/9.webp"
   },
   {
     id: 8,
@@ -94,20 +94,20 @@ const events = [
     time: "1:00 PM – 4:00 PM",
     location: "E-033",
     category: "Fun Event",
-    description: "Reimagine and revamp well-known brands with a twist.",
+    description: "Reimagine and revamp well-known brands with a twist. Part of our engaging domain-based activities that blend fun with learning — perfect for those who enjoy creative business challenges.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=Reboot+Rebrand"
+    image: "/events/10.webp"
   },
   {
     id: 9,
-    title: "The WOWS",
+    title: "The Wolf of Wall Street",
     date: "10th April",
     time: "1:00 PM – 4:00 PM",
     location: "A-013",
     category: "Fun Event",
-    description: "Test your marketing instincts and quirky branding skills.",
+    description: "Test your marketing instincts and quirky branding skills. An interactive event that blends fun with learning — perfect for those who enjoy fast-paced, creative marketing challenges.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=The+WOWS"
+    image: "/events/4.webp"
   },
   {
     id: 10,
@@ -116,9 +116,9 @@ const events = [
     time: "10:00 AM – 1:00 PM",
     location: "E-012",
     category: "Fun Event",
-    description: "Quickfire pitches and rapid innovation — can you keep up?",
+    description: "Quickfire pitches and rapid innovation — can you keep up? Part of our fun & domain-based activities designed to sharpen your business skills while keeping you energized.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=Pitch+Sprint"
+    image: "/events/5.webp"
   },
   {
     id: 11,
@@ -127,9 +127,9 @@ const events = [
     time: "10:00 AM – 1:00 PM",
     location: "E-032",
     category: "Fun Event",
-    description: "Design a killer ad campaign with your team under pressure!",
+    description: "Design a killer ad campaign with your team under pressure! An engaging, interactive event that blends creativity with strategic thinking — perfect for marketing enthusiasts.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=Ad+Jam"
+    image: "/events/11.webp"
   },
   {
     id: 12,
@@ -138,9 +138,9 @@ const events = [
     time: "10:00 AM – 1:00 PM",
     location: "Between PG and A Block",
     category: "Fun Event",
-    description: "Put on your detective hat and solve the mysterious business case.",
+    description: "Put on your detective hat and solve the mysterious business case. A fun & domain-based activity that tests your analytical thinking and problem-solving skills.",
     badge: "Fun Event",
-    image: "/placeholder.svg?text=Conan+Detective"
+    image: "/events/6.webp"
   },
 
   // Panel Discussions
@@ -151,9 +151,9 @@ const events = [
     time: "11:45 AM – 12:45 PM",
     location: "B-block Seminar Hall",
     category: "Panel Discussion",
-    description: "",
+    description: "A structured conversation where a group of experts shares insights on a specific topic. Each panelist offers unique perspectives based on their expertise and experiences, encouraging interactive dialogue, often followed by a Q&A session with the audience.",
     badge: "Panel",
-    image: "/placeholder.svg?text=Panel+Discussion"
+    image: "/events/1.webp"
   },
 
   // Workshops
@@ -164,9 +164,9 @@ const events = [
     time: "11:00 AM – 12:00 PM",
     location: "B-block Seminar Hall",
     category: "Workshop",
-    description: "",
+    description: "An interactive session focused on learning a specific skill or topic. Participants engage in hands-on activities that encourage practical understanding and collaboration.",
     badge: "Workshop",
-    image: "/placeholder.svg?text=Workshop"
+    image: "/events/1.webp"
   }
 ];
 
@@ -194,13 +194,12 @@ function EventCard({ event }: { event: Event }) {
         boxShadow: "0 10px 30px -15px rgba(216, 155, 29, 0.2)",
       }}
     >
-      <div className="aspect-video w-full overflow-hidden">
+      <div className="relative pb-[125%] w-full overflow-hidden">
         <Image
           src={event.image}
           alt={event.title}
-          width={400}
-          height={200}
-          className="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          fill
+          className="absolute inset-0 object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>
       <div className="p-6 flex flex-col flex-grow">
