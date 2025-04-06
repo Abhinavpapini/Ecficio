@@ -42,13 +42,13 @@ const sponsorshipTiers = [
 
 const sponsors = {
   gold: [
-    {
-      name: "Company Name 1",
-      image: "/sponsors/company1.jpg",
-      description:
-        "Leading provider of innovative solutions in technology and business.",
-      website: "#",
-    },
+    // {
+    //   name: "Company Name 1",
+    //   image: "/sponsors/company1.jpg",
+    //   description:
+    //     "Leading provider of innovative solutions in technology and business.",
+    //   website: "#",
+    // },
     // Add more gold sponsors...
   ],
   silver: [
@@ -60,10 +60,10 @@ const sponsors = {
     // Add more silver sponsors...
   ],
   bronze: [
-    {
-      name: "Supporter 1",
-      image: "/sponsors/supporter1.jpg",
-    },
+    // {
+    //   name: "Supporter 1",
+    //   image: "/sponsors/supporter1.jpg",
+    // },
     // Add more bronze sponsors...
   ],
 };

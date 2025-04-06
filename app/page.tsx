@@ -12,11 +12,15 @@ export default function Home() {
   const aboutRef = useRef<HTMLElement>(null);
   const highlightsRef = useRef<HTMLElement>(null);
   const [showScrollToTop, setShowScrollToTop] = useState(false);
+  
+  // Adjust this offset value based on your header height
+  const scrollOffset = 120; // Increased from 80 to give more space
 
   const scrollToSection = (section: string) => {
     const ref = section === "about" ? aboutRef : highlightsRef;
     if (ref.current) {
-      window.scrollTo({ top: ref.current.offsetTop - 80, behavior: "smooth" });
+      const topPosition = ref.current.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+      window.scrollTo({ top: topPosition, behavior: "smooth" });
     }
   };
 
@@ -33,13 +37,18 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Fix for hash navigation
   useEffect(() => {
     if (window.location.hash) {
-      const sectionId = window.location.hash.substring(1);
-      const section = document.getElementById(sectionId);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth", block: "start" });
-      }
+      // Wait for page to fully load
+      setTimeout(() => {
+        const sectionId = window.location.hash.substring(1);
+        const section = document.getElementById(sectionId);
+        if (section) {
+          const topPosition = section.getBoundingClientRect().top + window.pageYOffset - scrollOffset;
+          window.scrollTo({ top: topPosition, behavior: "smooth" });
+        }
+      }, 300);
     }
   }, []);
 
@@ -47,21 +56,21 @@ export default function Home() {
     <div className="min-h-screen bg-[#030303] text-[#f1e8eb]">
       <main>
         {/* Video Section - Increased height */}
-<section className="relative overflow-hidden">
-  <div className="video-container w-full"> {/* Add w-full to ensure container takes full width */}
-    <video
-      className="w-full h-[50vh] md:h-[60vh] object-cover"
-      autoPlay
-      loop
-      muted
-      playsInline
-    >
-      <source src="/LogoReveal.mp4" type="video/mp4" />
-      Your browser does not support the video tag.
-    </video>
-    <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
-  </div>
-</section>
+        <section className="relative overflow-hidden">
+          <div className="video-container w-full">
+            <video
+              className="w-full h-[50vh] md:h-[60vh] object-cover"
+              autoPlay
+              loop
+              muted
+              playsInline
+            >
+              <source src="/LogoReveal.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
+            <div className="absolute inset-0 bg-gradient-to-b from-black/50 to-transparent"></div>
+          </div>
+        </section>
 
         {/* Hero Section - Minimal padding and maximized logo size */}
         <section className="relative overflow-hidden py-2">
@@ -171,8 +180,8 @@ export default function Home() {
           </div>
         </section>
 
-        {/* About Section */}
-        <section id="about" ref={aboutRef} className="py-12 bg-[#030303]">
+        {/* About Section - Added padding-top for better scroll positioning */}
+        <section id="about" ref={aboutRef} className="py-12 bg-[#030303] pt-20">
           <div className="container px-4 md:px-6">
             <motion.div
               className="flex flex-col items-center space-y-4 text-center mb-10"
@@ -313,11 +322,11 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Highlights Section */}
+        {/* Highlights Section - Added padding-top for better scroll positioning */}
         <section
           id="highlights"
           ref={highlightsRef}
-          className="py-16 bg-[#030303]"
+          className="py-16 pt-24 bg-[#030303]"
         >
           <div className="container px-4 md:px-6">
             <motion.div
@@ -337,35 +346,23 @@ export default function Home() {
               </p>
             </motion.div>
             <RollingGallery autoplay={true} pauseOnHover={true} />
-
-            {/* <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {[1, 2, 3, 4, 5, 6, 7, 8].map((item) => (
-                <motion.div
-                  key={item}
-                  className="group relative overflow-hidden rounded-lg aspect-square"
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: "-100px" }}
-                  transition={{ duration: 0.5, delay: item * 0.05 }}
-                  whileHover={{ scale: 1.05, zIndex: 10 }}
-                >
-                  <Image
-                    src={`/placeholder.svg?height=300&width=300&text=Highlight+${item}`}
-                    alt={`Previous Highlight ${item}`}
-                    width={300}
-                    height={300}
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#030303] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                    <p className="text-[#f1e8eb] text-sm font-medium">
-                      Ecficio 6.0 - 2024
-                    </p>
-                  </div>
-                </motion.div>
-              ))}
-            </div> */}
           </div>
         </section>
+
+        {/* Add Scroll to Top Button */}
+        {showScrollToTop && (
+          <motion.button
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed bottom-8 right-8 p-3 rounded-full bg-[#d89b1d] text-[#030303] shadow-lg z-50"
+            onClick={scrollToTop}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M18 15l-6-6-6 6"/>
+            </svg>
+          </motion.button>
+        )}
       </main>
     </div>
   );
