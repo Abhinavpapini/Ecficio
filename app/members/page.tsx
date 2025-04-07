@@ -133,12 +133,6 @@ const teamData: TeamData = {
         image: "/members/Praneeth.webp",
       },
       {
-        name: "R. Dhawan Kumar",
-        rollNumber: "21071A0252",
-        department: "EEE",
-        image: "/members/Dhawan.webp",
-      },
-      {
         name: "Renith Raj",
         rollNumber: "22071A0393",
         department: "ME",
@@ -288,6 +282,12 @@ const teamData: TeamData = {
         rollNumber: "23071A66B6",
         department: "AIML",
         image: "/members/PatnalaMaheshwar.webp",
+      },
+      {
+        name: "R. Dhawan Kumar",
+        rollNumber: "21071A0252",
+        department: "EEE",
+        image: "/members/Dhawan.webp",
       },
       {
         name: "Saaketh Pallikonda",
