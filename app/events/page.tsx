@@ -154,7 +154,7 @@ const events = [
     category: "Panel Discussion",
     description: "A structured conversation where a group of experts shares insights on a specific topic. Each panelist offers unique perspectives based on their expertise and experiences, encouraging interactive dialogue, often followed by a Q&A session with the audience.",
     badge: "Panel",
-    image: "/events/1.webp"
+    image: "/events/22.webp"
   },
 
   // Workshops
